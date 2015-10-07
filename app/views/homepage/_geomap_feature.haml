@@ -1,11 +1,34 @@
 .googlemap
-  .jsmap.listing-map{:id => "map_canvas"}
+  .jsmap.map-search-listing{:id => "map_canvas"}
   - content_for :extra_javascript do
     :javascript
       $(document).ready(function() {
-        myOptions = {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
+        var options = {
+          zoom: 3,
+          center: new google.maps.LatLng(32.1656, -82.9001),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById('map_canvas'), options);
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var locations = JSON.parse('#{listings}');
+
+
+        var marker, i;
+        for (i = 0; i < locations.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i].lat, locations[i].long),
+            map: map
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              content = "<p>" + locations[i].c + "</p>";
+              content += "<p class='map-link'>" + "<a href='" + 'listings/' + locations[i].u + "'>" + locations[i].t + "</a></p>";
+              infowindow.setContent(content);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
         }
-        map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
       });

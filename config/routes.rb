@@ -17,8 +17,8 @@ Kassi::Application.routes.draw do
 
   match "/design" => "design#design"
 
-  get '/listing', to: 'homepage#listing', as: :home_listing
-  get '/:locale/listing', to: 'homepage#listing', as: :home_listing
+  get '/browse_listings', to: 'homepage#listing', as: :home_listing
+  get '/:locale/browse_listings', to: 'homepage#listing', as: :home_listing
 
   get '/coverage', to: 'homepage#coverage', as: :home_coverage
   get '/:locale/coverage', to: 'homepage#coverage', as: :home_coverage

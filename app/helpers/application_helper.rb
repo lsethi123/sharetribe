@@ -893,4 +893,16 @@ module ApplicationHelper
       content_for :extra_javascript do js end
     end
   end
+
+  def all_listing_locations(listings)
+    listing_loc = []
+    listings.each do |list|
+      puts "#{list.inspect}"
+      listing = Listing.find_by_id(list.id)
+      listing_loc << {c: listing.location.google_address.to_s, lat: listing.location.latitude, long: listing.location.longitude, :u => list.url, :t => list.title}
+    end
+    #puts "#{lat_lang}"
+    listing_loc.to_json
+  end
+
 end

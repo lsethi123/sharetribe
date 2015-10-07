@@ -2,12 +2,6 @@
   initialize_homepage();
 
 - content_for :extra_javascript do
-  :javascript
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 6
-    });
-
   = javascript_include_tag "https://maps.google.com/maps/api/js?sensor=true"
 
 - content_for :title_header do
@@ -17,8 +11,8 @@
     - else
       =# render :partial => "search_bar"
 
-#map
-  = render :partial => "geomap_feature", :locals => { :listing => @listing}
+#map.map-search-listing
+  = render :partial => "geomap_feature", :locals => { :listings => all_listing_locations(@listings)}
 
 #search
   = text_field_tag "q", params[:q], :placeholder => (@community_customization && @community_customization.search_placeholder) || t("homepage.index.what_do_you_need")

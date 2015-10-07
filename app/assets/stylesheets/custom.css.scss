@@ -160,6 +160,9 @@ header {
 .home-box-content {
   margin-top: 30px;
   h3 {
+    color: #ffffff;
+    font-size: 26px;
+    margin-bottom: 10px;
     text-align: center;
   }
   .box-item {
@@ -168,6 +171,21 @@ header {
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    .box-item-text {
+      color: #ffffff;
+      display: table-cell;
+      font-size: 15px;
+      height: 300px;
+      line-height: 20px;
+      text-align: center;
+      vertical-align: middle;
+      word-spacing: 2px;
+      a {
+        color: #07A20A;
+      }
+    }
   }
   .box-item-image {
     margin-top: 10px;
@@ -179,4 +197,16 @@ header {
 
 .join-now-link {
   color: #07A20A;
+}
+
+.map-search-listing {
+  height: 350px;
+}
+
+.map-link {
+  text-align: center;
+  a {
+    color: #07A20A;
+    font-size: 16px;
+  }
 }
