@@ -1,15 +1,23 @@
+-# Hide header in map view if mobile
 %header.header
   .header-wrapper
     .left-menu
-      .header-menu-container.toggle.hidden{data: {toggle: '#header-menu-toggle-menu', 'toggle-position' => 'absolute'}}
-        #header-menu-mobile-anchor.header-menu-toggle-container.toggle-header-container
-          = icon_tag("rows", ["header-menu-icon"])
-          %span.visible-tablet-inline
-            = t("header.menu")
+      .visible-tablet
+        #header-menu-desktop-anchor.header-menu-container.toggle.hidden{data: {toggle: '#header-menu-toggle-menu', 'toggle-position' => 'absolute'}}
+      .hidden-tablet
+        .header-menu-container.toggle.hidden{data: {toggle: '#header-menu-toggle-menu', 'toggle-position' => 'absolute'}}
+          #header-menu-mobile-anchor.header-menu-toggle-container.toggle-header-container
+            = icon_tag("rows", ["header-menu-icon"])
+            %span.visible-tablet-inline
+              = t("header.menu")
+      = render :partial => "layouts/header_menu"
+    -#
+      If necessary, the buttons will overlap with the logo. Buttons should be on top, that's
+      keep the logo here after buttons
     .middle-logo
       = link_to @homepage_path, :class => "header-logo", :id => "header-logo" do
         %i.header-wide-logo.visible-tablet
-        -# Logo is here, it's a CSS background
+          -# Logo is here, it's a CSS background
         %i.header-square-logo.hidden-tablet
           -# Logo is here, it's a CSS background
     .right-actions
@@ -33,4 +41,3 @@
             .header-right
               = render :partial => "layouts/header_anchors", locals: {user: user}
               = render :partial => "layouts/header_user_menu", locals: {unread_count: unread_count, user: user}
-    = render :partial => "layouts/header_menu"
