@@ -1,0 +1,36 @@
+%header.header
+  .header-wrapper
+    .left-menu
+      .header-menu-container.toggle.hidden{data: {toggle: '#header-menu-toggle-menu', 'toggle-position' => 'absolute'}}
+        #header-menu-mobile-anchor.header-menu-toggle-container.toggle-header-container
+          = icon_tag("rows", ["header-menu-icon"])
+          %span.visible-tablet-inline
+            = t("header.menu")
+    .middle-logo
+      = link_to @homepage_path, :class => "header-logo", :id => "header-logo" do
+        %i.header-wide-logo.visible-tablet
+        -# Logo is here, it's a CSS background
+        %i.header-square-logo.hidden-tablet
+          -# Logo is here, it's a CSS background
+    .right-actions
+      .header-right
+        .header-right
+          = link_to new_listing_path, :class => "new-listing-link" do
+            = icon_tag("new_listing", ["icon-with-text"])
+            = t("homepage.index.list_your_ride")
+        - unless @current_user
+          .header-right
+            = link_to sign_up_path, class: "header-text-link header-hover" do
+              = t("header.signup")
+          .header-right
+            = link_to login_path, class: "header-text-link header-hover", id: "header-login-link" do
+              = t("header.login")
+        - else
+          - Maybe(@current_user).each do |user|
+            - conversations = @current_community.conversations.for_person(user)
+            - unread_count = MarketplaceService::Inbox::Query.notification_count(user.id, @current_community.id)
+
+            .header-right
+              = render :partial => "layouts/header_anchors", locals: {user: user}
+              = render :partial => "layouts/header_user_menu", locals: {unread_count: unread_count, user: user}
+    = render :partial => "layouts/header_menu"

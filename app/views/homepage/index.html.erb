@@ -1,0 +1,91 @@
+<%= content_for :javascript do %>
+    initialize_homepage();
+<%end%>
+
+<div class="home-page-wrapper">
+  <div class="home-search" id='search'>
+    <%= render :partial => 'homepage/search_bar' %>
+  </div>
+  <div class="home-header-text">
+    Connect you to your next off road adventure
+  </div>
+  <div class="shyftn-quoate">
+    <div class="row">
+      <div class="col-12">
+        <div class="col-3 quoate-item">
+          <h1> Simple </h1>
+
+          <div class="quoate-text">
+            Just do a quick search and see all the rides you can choose from. You can book your adventure in a matter of
+            minutes!
+          </div>
+        </div>
+        <div class="col-3 quoate-item">
+          <h1> Low Rates </h1>
+
+          <div class="quoate-text">
+            Rent rides for less and never worry about carrying cash. Secure payments are processed through the site.
+          </div>
+        </div>
+        <div class="col-3 quoate-item">
+          <h1> No Hidden Fees</h1>
+
+          <div class="quoate-text">
+            We have clean pricing and do not charge any hidden fees.
+          </div>
+        </div>
+        <div class="col-3 quoate-item">
+          <h1> Reviews </h1>
+
+          <div class="quoate-text">
+            Written by hosts and Riders like you about their experiences. Reviews help you to select the correct ride
+            with confidence.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="home-box-content">
+    <div class="row">
+      <div class="col-12">
+        <div class="col-4">
+          <div class="box-item">
+            <h3> Meet New People </h3>
+
+            <div class="box-item-text">
+              Our Friendly hosts welcome you into thier homes and allow you to take their rides for a spin.
+            </div>
+            <div class="box-item-image">
+              <%= image_tag('design/landscape_almost_square.png') %>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="box-item">
+            <h3> Ride Solor or With Friend </h3>
+
+            <div class="box-item-text">
+              Ride alone or share the experience with friends and family. We have many suitable options to accomodate
+              one or multiple riders.
+            </div>
+            <div class="box-item-image">
+              <%= image_tag('design/landscape_almost_square.png') %>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="box-item">
+            <h3> The Shyftn Experience </h3>
+
+            <div class="box-item-text">
+              See what is being said about the Shyftn <%= link_to 'community', home_community_path %>.
+            </div>
+            <div class="box-item-image">
+              <%= image_tag('design/landscape_almost_square.png') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

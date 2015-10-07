@@ -1,0 +1,11 @@
+.googlemap
+  .jsmap.listing-map{:id => "map_canvas"}
+  - content_for :extra_javascript do
+    :javascript
+      $(document).ready(function() {
+        myOptions = {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        }
+        map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+      });

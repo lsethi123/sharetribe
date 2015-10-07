@@ -1,0 +1,40 @@
+<footer class="global-footer">
+  <div class="grid-locked">
+    <article class="navs yui3-u-1-3 res-s-hidden">
+      <nav class="primary">
+        <a data-ga="global-footer.home-button-click" class="ga-click-track" href="/">
+          Home
+        </a>
+        <span>•</span>
+        <a data-ga="global-footer.cities-button-click" class="ga-click-track" href="<%= home_listing_path %>">
+          Listings
+        </a>
+        <span> •</span>
+        <%= link_to new_listing_path do %>
+            <%= t("homepage.index.post_new_listing") %>
+        <% end %>
+      </nav>
+      <nav class="secondary">
+        <%= link_to new_invitation_path do %>
+            <%= t("header.invite") %>
+        <% end %>
+        |
+        <%= link_to home_community_path do %>
+            Community
+        <% end %>
+        |
+        <%= link_to home_coverage_path do %>
+            Coverage
+        <% end %>
+        |
+        <%= link_to new_user_feedback_path do %>
+            <%= t("header.contact_us") %>
+        <% end %>
+        |
+        <%= link_to about_infos_path do %>
+            <%= t("header.about") %>
+        <% end %>
+      </nav>
+    </article>
+  </div>
+</footer>
