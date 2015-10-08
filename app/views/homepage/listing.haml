@@ -15,6 +15,15 @@
         .title-header-wrapper
           .marketplace-title-header
             %h1 Browse and Rent a Jet Ski From Someone Like you
+    - with_big_cover_photo do
+      .coverimage
+        %figure.marketplace-cover-small.fluidratio
+        .coverimage-fade
+          %figure.marketplace-cover-small-fade.fluidratio
+      .title-container
+        .title-header-wrapper
+          .marketplace-title-header
+            %h1 Browse and Rent a Jet Ski From Someone Like you
 
 #map.map-search-listing
   = render :partial => "geomap_feature", :locals => { :listings => all_listing_locations(@listings)}

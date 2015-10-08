@@ -108,6 +108,11 @@ group :development do
   gem 'i18n-tasks', '~> 0.6.2'
   gem 'quiet_assets'
   gem 'better_errors'
+
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
 end
 
 group :test do
