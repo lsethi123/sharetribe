@@ -7,9 +7,11 @@
 <% end %>
 
 <div class="home-page-wrapper">
-  <div class="home-search" id='search'>
-    <%= render :partial => 'homepage/search_bar' %>
-  </div>
+  <form action="<%= home_listing_path %>" method="get">
+    <div class="home-search" id='search'>
+      <%= render :partial => 'homepage/search_bar' %>
+    </div>
+  </form>
   <div class="home-header-text">
     Connect you to your next off road adventure
   </div>
