@@ -43,6 +43,9 @@ header {
     background: transparent !important;
     max-width: 100%;
   }
+  #header-menu-toggle-menu, #header-user-toggle-menu {
+    top: 60px !important;
+  }
 }
 
 .marketplace-lander {

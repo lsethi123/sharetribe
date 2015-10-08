@@ -5,11 +5,16 @@
   = javascript_include_tag "https://maps.google.com/maps/api/js?sensor=true"
 
 - content_for :title_header do
-  .browse-view-search-form
-    - if(feature_enabled?(:location_search))
-      =# render :partial => "location_bar"
-    - else
-      =# render :partial => "search_bar"
+  %section.marketplace-lander
+    - with_big_cover_photo do
+      .coverimage
+        %figure.marketplace-cover-small.fluidratio
+        .coverimage-fade
+          %figure.marketplace-cover-small-fade.fluidratio
+      .title-container
+        .title-header-wrapper
+          .marketplace-title-header
+            %h1 Browse and Rent a Jet Ski From Someone Like you
 
 #map.map-search-listing
   = render :partial => "geomap_feature", :locals => { :listings => all_listing_locations(@listings)}

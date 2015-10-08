@@ -12,8 +12,7 @@
     = render partial: "layouts/expiration_notice"
 
   - content_for(:page_content) do
-    = render :partial => 'homepage/slider'
-
+    = yield :title_header
     %article.page-content
       .wrapper
         = render :partial => "layouts/notifications"

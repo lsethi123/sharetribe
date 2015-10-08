@@ -5,7 +5,7 @@ class HomepageController < ApplicationController
 
   APP_DEFAULT_VIEW_TYPE = "grid"
   VIEW_TYPES = ["grid", "list", "map"]
-  layout 'landing', :only => 'index'
+  layout 'landing', :only => ['index', 'listing']
 
   def index
     @homepage = true
