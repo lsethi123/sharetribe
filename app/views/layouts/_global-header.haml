@@ -14,12 +14,13 @@
     -#
       If necessary, the buttons will overlap with the logo. Buttons should be on top, that's
       keep the logo here after buttons
-    .middle-logo
-      = link_to @homepage_path, :class => "header-logo", :id => "header-logo" do
-        %i.header-wide-logo.visible-tablet
-          -# Logo is here, it's a CSS background
-        %i.header-square-logo.hidden-tablet
-          -# Logo is here, it's a CSS background
+    = link_to @homepage_path, :class => "header-logo header-logo-link visible-tablet", :id => "header-logo" do
+      %i.header-wide-logo
+        -# Logo is here, it's a CSS background
+
+    = link_to @homepage_path, :class => "header-logo header-logo-link hidden-tablet", :id => "header-logo" do
+      %i.header-square-logo
+        -# Logo is here, it's a CSS background
     .right-actions
       .header-right.visible-tablet
         .header-right

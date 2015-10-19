@@ -1,31 +1,20 @@
-<div id="slider1_container" style="position: relative; margin: 0 auto;
-        top: 0px; left: 0px; width: 1300px; height: 550px; overflow: hidden;">
-  <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px;
-          height: 550px; overflow: hidden;">
-    <div>
-      <%= image_tag('slider/slider1.jpg', :u => 'image') %>
-    </div>
-
-    <div>
-      <%= image_tag('slider/slider2.jpg', :u => 'image') %>
-    </div>
-
-    <div>
-      <%= image_tag('slider/slider3.jpg', :u => 'image') %>
-    </div>
-
+<section class="marketplace-lander">
+  <div class="coverimage">
+    <figure class="marketplace-cover fluidratio"></figure>
   </div>
-  <div style="position: absolute; width: 100%; height: 120px; top: 100px; left: 30px; padding: 5px;
-          text-align: center; line-height: 60px; text-transform: uppercase; font-size: 50px;
-          color: #FFFFFF;">Rent a Jet Ski From Someone Like you
+  <div class="wrapper">
+    <div class="lander-content-container">
+      <div class="lander-content marketplace-lander-content">
+        <h2 class="slider-lander-content-title marketplace-lander-content-title" style="padding: 0;">
+          RENT A JET SKI FROM SOMEONE LIKE YOU
+        </h2>
+        <p>
+          Get paid to share your Jet Skis ATVs and more with others!
+          <%= link_to 'join for free>>', sign_up_path, :class => 'join-now-link' %>
+        </p>
+      </div>
+    </div>
   </div>
-  <div style="position: absolute; width: 480px; height: 120px; top: 350px; left: 396px; padding: 5px;
-          text-align: center; line-height: 36px; font-size: 30px;
-          color: #FFFFFF;">
-    Get paid to share your Jet Skis, ATVs and more with
-    others! <%= link_to 'join for free>>', sign_up_path, :class => 'join-now-link' %>
-  </div>
-
   <div class="home-page-wrapper" style="position: absolute; width: 100%; bottom: 0px; background-color: rgba(0, 0, 0, 0.6)">
     <div style="margin: 30px auto; width: 77%;">
       <form action="<%= home_listing_path %>" method="get">
@@ -35,17 +24,4 @@
       </form>
     </div>
   </div>
-
-  <!--<div u="navigator" class="jssorb21" style="bottom: 26px; right: 6px;">-->
-    <!--<div u="prototype"></div>-->
-  <!--</div>-->
-
-  <!-- Arrow Left -->
-        <span u="arrowleft" class="jssora21l" style="top: 123px; left: 8px;">
-        </span>
-  <!-- Arrow Right -->
-        <span u="arrowright" class="jssora21r" style="top: 123px; right: 8px;">
-        </span>
-  <!--#endregion Arrow Navigator Skin End -->
-  <a style="display: none" href="http://www.jssor.com">Bootstrap Slider</a>
-</div>
+</section>
