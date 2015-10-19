@@ -1086,6 +1086,7 @@ en:
       request_partitive: request
   header:
     about: About
+    terms: Terms
     home: Home
     members: Community
     new_listing: "New listing"
@@ -1097,7 +1098,8 @@ en:
     contact_us: "Contact us"
     profile: Profile
     invite: "Invite new members"
-    login: "Sign in"
+    promise: "Shyftn Promise"
+    login: "Log in"
     signup: "Sign up"
     menu: Menu
   homepage:

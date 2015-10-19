@@ -24,7 +24,7 @@
       .header-right.visible-tablet
         .header-right
           = link_to new_listing_path, :class => "new-listing-link" do
-            = icon_tag("new_listing", ["icon-with-text"])
+            -#= icon_tag("new_listing", ["icon-with-text"])
             = t("homepage.index.list_your_ride")
         - unless @current_user
           .header-right

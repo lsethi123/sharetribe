@@ -14,6 +14,7 @@ header {
     display: inline-block !important;
     height: 2.5em;
     margin-bottom: 0.625em;
+    margin-left: 4.625em;
     margin-top: 0.625em;
     i {
       margin: auto;
@@ -142,9 +143,9 @@ header {
 
 .home-header-text {
   text-align: center;
-  font-size: 26px;
+  font-size: 32px;
   font-weight: bold;
-  margin: 15px 0;
+  margin: 15px 0 35px;
 }
 
 .shyftn-quoate {
@@ -155,7 +156,7 @@ header {
       text-align: center;
     }
     .quoate-text {
-       text-align: left;
+       text-align: center;
     }
   }
 }
@@ -170,7 +171,6 @@ header {
   }
   .box-item {
     padding: 10px 5px;
-    border: solid 2px #000000;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
@@ -183,7 +183,7 @@ header {
       height: 300px;
       line-height: 20px;
       text-align: center;
-      vertical-align: middle;
+      vertical-align: bottom;
       word-spacing: 2px;
       a {
         color: #07A20A;

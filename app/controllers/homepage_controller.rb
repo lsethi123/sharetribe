@@ -113,6 +113,7 @@ class HomepageController < ApplicationController
 
   end
 
+
   def listing
     @homepage = true
 

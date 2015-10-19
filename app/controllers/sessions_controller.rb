@@ -99,7 +99,10 @@ class SessionsController < ApplicationController
   def request_new_password
     if person = Person.find_by_email(params[:email])
       person.reset_password_token_if_needed
-      PersonMailer.reset_password_instructions(person,params[:email], @current_community).deliver
+      p = PersonMailer.reset_password_instructions(person,params[:email], @current_community).deliver
+      puts"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<,"
+      puts(p.inspect)
+      puts"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<,"
       flash[:notice] = t("layouts.notifications.password_recovery_sent")
     else
       flash[:error] = t("layouts.notifications.email_not_found")
