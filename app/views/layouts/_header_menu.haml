@@ -1,10 +1,4 @@
 #header-menu-toggle-menu.toggle-menu.header-toggle-menu-menu.hidden
-  .hidden-desktop
-    - unless @current_user
-      = link_to sign_up_path do
-        = t("header.signup")
-      = link_to login_path do
-        = t("header.login")
   = link_to "/" do
     = t("header.home")
 

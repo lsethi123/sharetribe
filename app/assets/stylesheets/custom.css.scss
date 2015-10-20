@@ -12,35 +12,29 @@ header {
   }
 
   .header-logo-link {
-    position: absolute;
-    top: 0;
     &.visible-tablet {
       left: calc(50% - 80px);
+      position: absolute;
+      top: 0;
     }
     &.hidden-tablet {
-      left: calc(50% - 20px);
+      float: left;
+      margin-left: 5px;
     }
   }
 
   .left-menu {
-    min-width: 150px;
     display: inline-block;
     text-align: left;
+    float: left;
   }
 
   .middle-logo {
-    //width: calc(100% - 475px);
-    //min-width: 100px;
-    //display: inline-block;
-    //text-align: center;
-    //vertical-align: top;
     position: absolute;
     top: 0;
   }
 
-  .right-actions {
-    min-width: 315px;
-    display: inline-block;
+  .right-actions {    display: inline-block;
     text-align: right;
     float: right;
   }
@@ -231,4 +225,16 @@ header {
     color: #07A20A;
     font-size: 16px;
   }
+}
+
+#header-user-desktop-anchor {
+  padding-left: 0 !important;
+}
+
+.header-user-toggle {
+  padding-left: 15px;
+}
+
+#header-user-mobile-anchor {
+  padding-left: 15px;
 }
