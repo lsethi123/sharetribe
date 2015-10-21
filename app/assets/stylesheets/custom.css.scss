@@ -34,7 +34,8 @@ header {
     top: 0;
   }
 
-  .right-actions {    display: inline-block;
+  .right-actions {
+    display: inline-block;
     text-align: right;
     float: right;
   }
@@ -197,7 +198,7 @@ header {
       color: #ffffff;
       display: table-cell;
       font-size: 15px;
-      height: 350px;
+      height: 335px;
       line-height: 20px;
       text-align: center;
       vertical-align: bottom;
@@ -221,8 +222,6 @@ header {
   font-weight: bolder;
 }
 
-
-
 .map-search-listing {
   height: 350px;
 }
@@ -245,4 +244,16 @@ header {
 
 #header-user-mobile-anchor {
   padding-left: 15px;
+}
+
+.home-search {
+  #q {
+    min-height: 52px;
+  }
+  .search-form-input {
+    #search-button {
+      padding: 15px 1.5em 7px !important;
+      height: 48px !important;
+    }
+  }
 }
