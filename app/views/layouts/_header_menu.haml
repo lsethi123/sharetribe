@@ -2,21 +2,20 @@
   = link_to "/" do
     = t("header.home")
 
-  = link_to new_listing_path, :class => "hidden-tablet" do
+  = link_to new_listing_path  do
     = t("homepage.index.post_new_listing")
   - Maybe(@current_community).menu_links.each do |menu_links|
     - menu_links.each do |menu_link|
       = link_to menu_link.url(I18n.locale) do
         = menu_link.title(I18n.locale)
+  = link_to home_coverage_path do
+    = t("header.promise")
 
   = link_to about_infos_path do
     = t("header.about")
 
   = link_to new_user_feedback_path do
     = t("header.contact_us")
-
-  = link_to home_coverage_path do
-    = t("header.promise")
 
 
   - if @current_user && @current_community && @current_user.has_admin_rights_in?(@current_community)
