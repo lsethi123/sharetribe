@@ -160,7 +160,7 @@ header {
   text-align: center;
   font-size: 32px;
   font-weight: bold;
-  margin: 15px 0 45px;
+  margin: 15px 0 55px;
   &.visible-tablet {
     font-size: 24px;
   }
@@ -222,6 +222,10 @@ header {
   font-weight: bolder;
 }
 
+.join-now-link:hover{
+  color: #2754e8 !important;
+}
+
 .map-search-listing {
   height: 350px;
 }
@@ -248,12 +252,16 @@ header {
 
 .home-search {
   #q {
-    min-height: 52px;
+    min-height: 48px;
   }
   .search-form-input {
     #search-button {
       padding: 15px 1.5em 7px !important;
-      height: 48px !important;
+      height: 44px !important;
     }
   }
+}
+
+.copyright p {
+  font-size: 14px;
 }
