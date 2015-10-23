@@ -209,6 +209,7 @@ header {
     text-align: center;
     position: relative;
     .box-item-text {
+      background: rgba(100, 100, 100, 0.3) none repeat scroll 0 0;
       color: #ffffff;
       position: absolute;
       font-size: 15px;
@@ -225,6 +226,7 @@ header {
     img {
       width: 100%;
       min-height: 250px;
+      border-radius: 7px;
     }
   }
 
