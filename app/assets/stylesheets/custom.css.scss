@@ -25,6 +25,15 @@ header {
     }
   }
 
+  #header-logo {
+    width: 40px;
+    width: 40px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   .left-menu {
     display: inline-block;
     text-align: left;
@@ -73,9 +82,9 @@ header {
     position: absolute;
     right: 2px;
     top: 2px;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
+    -webkit-border-radius: 0px 4px 4px 0px !important;
+    -moz-border-radius: 0px 4px 4px 0px !important;
+    border-radius: 0px 4px 4px 0px !important;
     width: auto;
     padding: 10px 1.5em 4px;
   }
@@ -112,7 +121,7 @@ header {
 
 .promise-title {
   text-align: center;
-  color: #E90000;
+  color: #0E35B5;
   font-weight: bold;
 }
 
@@ -160,7 +169,7 @@ header {
 
 .home-header-text {
   text-align: center;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   margin: 15px 0 55px;
   &.visible-tablet {
@@ -255,6 +264,7 @@ header {
 .home-search {
   #q {
     min-height: 45px;
+    font-size: 18px !important;
   }
   .search-form-input {
     #search-button {
