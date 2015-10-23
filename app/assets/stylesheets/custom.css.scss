@@ -198,6 +198,7 @@ header {
     margin-bottom: 10px;
     text-align: center;
   }
+
   .box-item {
     padding: 10px 5px;
     -webkit-border-radius: 7px;
@@ -206,20 +207,27 @@ header {
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
     text-align: center;
+    position: relative;
     .box-item-text {
       color: #ffffff;
-      display: table-cell;
+      position: absolute;
       font-size: 15px;
-      height: 335px;
       line-height: 20px;
       text-align: center;
-      vertical-align: bottom;
+      bottom: 10px;
+      padding: 10px 5px;
       word-spacing: 2px;
+      width: calc(100% - 10px);
       a {
         color: #07A20A;
       }
     }
+    img {
+      width: 100%;
+      min-height: 250px;
+    }
   }
+
   .box-item-image {
     margin-top: 10px;
     img {
