@@ -8,9 +8,9 @@
 
 <div class="home-page-wrapper">
   <!--<form action="<%= home_listing_path %>" method="get">-->
-    <!--<div class="home-search" id='search'>-->
-      <!--<%#= render :partial => 'homepage/search_bar' %>-->
-    <!--</div>-->
+  <!--<div class="home-search" id='search'>-->
+  <!--<%#= render :partial => 'homepage/search_bar' %>-->
+  <!--</div>-->
   <!--</form>-->
   <div class="home-header-text col-12">
     Connecting you to your next off road adventure!
@@ -74,11 +74,13 @@
         </div>
         <div class="col-4">
           <div class="box-item" style="background-image: url('<%= image_path('slider/slider3.jpg') %>')">
-            <div class="box-item-text">
-              <h3> The Shyftn Experience </h3>
+            <%= link_to home_community_path do %>
+                <div class="box-item-text">
+                  <h3> The Shyftn Experience </h3>
 
-              See what is being said about the Shyftn <%= link_to 'community', home_community_path %>.
-            </div>
+                  See what is being said about the Shyftn community.
+                </div>
+            <% end %>
           </div>
         </div>
       </div>
