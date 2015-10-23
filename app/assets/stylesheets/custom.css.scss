@@ -205,6 +205,7 @@ header {
     border-radius: 7px;
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
+    text-align: center;
     .box-item-text {
       color: #ffffff;
       display: table-cell;
@@ -213,7 +214,6 @@ header {
       line-height: 20px;
       text-align: center;
       vertical-align: bottom;
-      width: 325px;
       word-spacing: 2px;
       a {
         color: #07A20A;
