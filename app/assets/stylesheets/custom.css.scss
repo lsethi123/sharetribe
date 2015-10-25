@@ -145,11 +145,12 @@ header {
 
   .user-img {
     border: 1px solid #ccc;
-    max-width: 175px;
+    max-width: 195px;
+    vertical-align: top;
     width: 100%;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 95px;
+    -moz-border-radius: 95px;
+    border-radius: 95px;
   }
 
   .quoate-item {
