@@ -113,6 +113,15 @@ class HomepageController < ApplicationController
 
   end
 
+  def search_by_address
+    address = Location.suggest_by_name(params[:term])
+    address_hash = []
+    address.each do |address|
+      address_hash << address.address
+    end
+    render :json => address_hash
+  end
+
 
   def listing
     @homepage = true

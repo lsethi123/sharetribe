@@ -74,4 +74,6 @@
 //= require paypal_account_settings
 //= require transaction
 //= require listing_form
+//= require jquery.auto-complete.min
+//= require suggestion
 //= require_self

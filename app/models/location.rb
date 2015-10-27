@@ -27,6 +27,9 @@ class Location < ActiveRecord::Base
   belongs_to :listing
   belongs_to :community
 
+  scope :suggest_by_name, lambda{|address| select("DISTINCT(address)").where("lower(address) like lower(?) or lower(google_address) like lower(?)", "% #{address}%", "#{address}%")}
+
+
   def search_and_fill_latlng(address=nil, locale=APP_CONFIG.default_locale)
     okresponse = false
     geocoder = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address="
