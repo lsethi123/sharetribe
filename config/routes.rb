@@ -23,6 +23,8 @@ Kassi::Application.routes.draw do
   get '/coverage', to: 'homepage#coverage', as: :home_coverage
   get '/:locale/coverage', to: 'homepage#coverage', as: :home_coverage
 
+  get 'homepage/search_by_address'
+
   get '/community', to: 'homepage#community', as: :home_community
   get '/:locale/community', to: 'homepage#community', as: :home_community
 
