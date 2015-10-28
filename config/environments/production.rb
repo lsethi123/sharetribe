@@ -118,8 +118,8 @@ Kassi::Application.configure do
       address:              'smtp.gmail.com',
       port:                 587,
       domain:               'gmail.com',
-      user_name:            'donot.reply.codejam@gmail.com',
-      password:             'codejam2015',
+      user_name:            'contact@shyftn.com',
+      password:             'Mazda888',
       authentication:       'plain',
       enable_starttls_auto: true  }
 
