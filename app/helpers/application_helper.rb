@@ -4,246 +4,246 @@ module ApplicationHelper
   ICON_PACK = APP_CONFIG.icon_pack || "font-awesome"
 
   ICONS = {
-    "ss-pika" => {
+      "ss-pika" => {
 
-      # Default UI icons
-      "map" => "ss-maplocation",
-      "thumbnails" => "ss-thumbnails",
-      "grid" => "ss-thumbnails",
-      "new_listing" => "ss-addfile",
-      "search"  => "ss-search",
-      "globelocation" => "ss-globelocation",
-      "list" => "ss-list",
-      "home" => "ss-home",
-      "community" =>"ss-usergroup",
-      "help" => "ss-help",
-      "admin" => "ss-wrench",
-      "directup" => "ss-directup",
-      "directdown" => "ss-dropdown",
-      "directright" => "ss-navigateright",
-      "directleft" => "ss-navigateleft",
-      "dropdown" => "ss-dropdown",
-      "redirect" => "ss-redirect",
-      "mail" => "ss-mail",
-      "notifications" => "ss-earth",
-      "login" => "ss-login",
-      "logout" => "ss-logout",
-      "feedback" => "ss-megaphone",
-      "user" => "ss-user",
-      "settings" => "ss-settings",
-      "facebook" => "ss-facebook ss-icon ss-social",
-      "information" => "ss-info",
-      "alert" => "ss-alert",
-      "how_to_use" => "ss-signpost",
-      "privacy" => "ss-lockfile",
-      "terms" => "ss-textfile",
-      "testimonial" => "ss-star",
-      "star" => "ss-star",
-      "like" => "ss-like",
-      "dislike" => "ss-dislike",
-      "calendar" => "ss-calendar",
-      "phone" => "ss-phone",
-      "clock" => "ss-clock",
-      "eye" => "ss-view",
-      "cross" => "ss-delete",
-      "chat_bubble" => "ss-chat",
-      "tag" => "ss-tag",
-      "pricetag" => "ss-pricetag",
-      "lock" => "ss-lock",
-      "unlock" => "ss-unlock",
-      "edit" => "ss-draw",
-      "profile" => "ss-userfile",
-      "payments" => "ss-moneybag",
-      "notification_settings" => "ss-callbell",
-      "account_settings" => "ss-lockfile",
-      "rows" => "ss-rows",
-      "check" => "ss-check",
-      "invite" => "ss-adduser",
-      "loading" => "ss-loading",
-      "connect" => "ss-connection",
-      "reply" => "ss-reply",
-      "coins" => "ss-coins",
-      "send" => "ss-send",
-      "form" => "ss-form",
-      "link" => "ss-link",
-      "social_media" => "ss-share",
-      "analytics" => "ss-analytics",
-      "openbook" => "ss-openbook",
-      "order_types" => "ss-cart",
-      "download" => "ss-download",
+          # Default UI icons
+          "map" => "ss-maplocation",
+          "thumbnails" => "ss-thumbnails",
+          "grid" => "ss-thumbnails",
+          "new_listing" => "ss-addfile",
+          "search" => "ss-search",
+          "globelocation" => "ss-globelocation",
+          "list" => "ss-list",
+          "home" => "ss-home",
+          "community" => "ss-usergroup",
+          "help" => "ss-help",
+          "admin" => "ss-wrench",
+          "directup" => "ss-directup",
+          "directdown" => "ss-dropdown",
+          "directright" => "ss-navigateright",
+          "directleft" => "ss-navigateleft",
+          "dropdown" => "ss-dropdown",
+          "redirect" => "ss-redirect",
+          "mail" => "ss-mail",
+          "notifications" => "ss-earth",
+          "login" => "ss-login",
+          "logout" => "ss-logout",
+          "feedback" => "ss-megaphone",
+          "user" => "ss-user",
+          "settings" => "ss-settings",
+          "facebook" => "ss-facebook ss-icon ss-social",
+          "information" => "ss-info",
+          "alert" => "ss-alert",
+          "how_to_use" => "ss-signpost",
+          "privacy" => "ss-lockfile",
+          "terms" => "ss-textfile",
+          "testimonial" => "ss-star",
+          "star" => "ss-star",
+          "like" => "ss-like",
+          "dislike" => "ss-dislike",
+          "calendar" => "ss-calendar",
+          "phone" => "ss-phone",
+          "clock" => "ss-clock",
+          "eye" => "ss-view",
+          "cross" => "ss-delete",
+          "chat_bubble" => "ss-chat",
+          "tag" => "ss-tag",
+          "pricetag" => "ss-pricetag",
+          "lock" => "ss-lock",
+          "unlock" => "ss-unlock",
+          "edit" => "ss-draw",
+          "profile" => "ss-userfile",
+          "payments" => "ss-moneybag",
+          "notification_settings" => "ss-callbell",
+          "account_settings" => "ss-lockfile",
+          "rows" => "ss-rows",
+          "check" => "ss-check",
+          "invite" => "ss-adduser",
+          "loading" => "ss-loading",
+          "connect" => "ss-connection",
+          "reply" => "ss-reply",
+          "coins" => "ss-coins",
+          "send" => "ss-send",
+          "form" => "ss-form",
+          "link" => "ss-link",
+          "social_media" => "ss-share",
+          "analytics" => "ss-analytics",
+          "openbook" => "ss-openbook",
+          "order_types" => "ss-cart",
+          "download" => "ss-download",
 
-      # Default category & share type icons
-      "offer" => "ss-share",
-      "request" => "ss-tip",
-      "item" => "ss-box",
-      "favor" => "ss-heart",
-      "rideshare" => "ss-car",
-      "housing" => "ss-warehouse",
-      "other" => "ss-file",
-      "tools" => "ss-wrench",
-      "sports" => "ss-tabletennis",
-      "music" => "ss-music",
-      "books" => "ss-book",
-      "games" => "ss-fourdie",
-      "furniture" => "ss-lodging",
-      "outdoors" => "ss-campfire",
-      "food" => "ss-sidedish",
-      "electronics" => "ss-smartphone",
-      "pets" => "ss-tropicalfish",
-      "film" => "ss-moviefolder",
-      "clothes" => "ss-hanger",
-      "garden" => "ss-tree",
-      "travel" => "ss-departure",
-      "give_away" => "ss-gift",
-      "share_for_free" => "ss-gift",
-      "accept_for_free" => "ss-gift",
-      "lend" => "ss-flowertag",
-      "borrow" => "ss-flowertag",
-      "offer_to_swap" => "ss-reload",
-      "request_to_swap" => "ss-reload",
-      "buy" => "ss-moneybag",
-      "sell" => "ss-moneybag",
-      "rent" => "ss-pricetag",
-      "rent_out" => "ss-pricetag",
+          # Default category & share type icons
+          "offer" => "ss-share",
+          "request" => "ss-tip",
+          "item" => "ss-box",
+          "favor" => "ss-heart",
+          "rideshare" => "ss-car",
+          "housing" => "ss-warehouse",
+          "other" => "ss-file",
+          "tools" => "ss-wrench",
+          "sports" => "ss-tabletennis",
+          "music" => "ss-music",
+          "books" => "ss-book",
+          "games" => "ss-fourdie",
+          "furniture" => "ss-lodging",
+          "outdoors" => "ss-campfire",
+          "food" => "ss-sidedish",
+          "electronics" => "ss-smartphone",
+          "pets" => "ss-tropicalfish",
+          "film" => "ss-moviefolder",
+          "clothes" => "ss-hanger",
+          "garden" => "ss-tree",
+          "travel" => "ss-departure",
+          "give_away" => "ss-gift",
+          "share_for_free" => "ss-gift",
+          "accept_for_free" => "ss-gift",
+          "lend" => "ss-flowertag",
+          "borrow" => "ss-flowertag",
+          "offer_to_swap" => "ss-reload",
+          "request_to_swap" => "ss-reload",
+          "buy" => "ss-moneybag",
+          "sell" => "ss-moneybag",
+          "rent" => "ss-pricetag",
+          "rent_out" => "ss-pricetag",
 
-      # Custom category & share type icons
-      "job" => "ss-briefcase",
-      "announcement" => "ss-newspaper",
-      "news" => "ss-newspaper",
-      "wood_based_materials" => "ss-tree",
-      "plastic_and_rubber" => "ss-disc",
-      "metal" => "ss-handbag",
-      "concrete_and_brick" => "ss-form",
-      "glass_and_porcelain" => "ss-fragile",
-      "textile_and_leather" => "ss-hanger",
-      "soil_materials" => "ss-cloud",
-      "liquid_materials" => "ss-droplet",
-      "manufacturing_error_materials" => "ss-wrench",
-      "misc_material" => "ss-box",
-      "clothing" => "ss-hanger",
-      "accessories" => "ss-handbag",
-      "designers" => "ss-star",
-      "mealsharing" => "ss-sidedish",
-      "activities" => "ss-usergroup",
-      "accommodation" => "ss-lodging",
-      "search_material" => "ss-search",
-      "sell_material" => "ss-moneybag",
-      "give_away_material" => "ss-gift",
-      "beekeeping_and_honey" => "ss-waterbottle",
-      "eggs" => "ss-colander",
-      "produce" => "ss-carrot",
-      "other_food_item" => "ss-platter",
-      "food_related_supply" => "ss-cookingutensils",
-      "livestock" => "ss-bird",
-      "seeds_and_starts" => "ss-leaf",
-      "food_related_classes" => "ss-bookmark",
-      "bike" => "ss-bike",
-      "peat" => "ss-cloud",
-      "clay" => "ss-cloud",
-      "silt" => "ss-cloud",
-      "fine_moraine" => "ss-cloud",
-      "coarse_moraine" => "ss-cloud",
-      "sand" => "ss-cloud",
-      "gravel" => "ss-cloud",
-      "rock" => "ss-cloud",
-      "friend_for_languages_or_games" => "ss-users",
-      "location" => "ss-location",
-      "offer_job" => "ss-briefcase",
-      "internship" => "ss-users",
-      "volunteering" => "ss-heart",
-      "parking" => "ss-garage",
-      "meeting_spot" => "ss-usergroup",
-      "work_spot" => "ss-briefcase",
-      "cars" => "ss-car",
-      "raclette_grill" => "ss-cookingutensils",
-    },
-    "font-awesome" => {
-      "map" => "icon-map-marker",
-      "thumbnails" => "icon-th",
-      "new_listing" => "icon-plus-sign-alt",
+          # Custom category & share type icons
+          "job" => "ss-briefcase",
+          "announcement" => "ss-newspaper",
+          "news" => "ss-newspaper",
+          "wood_based_materials" => "ss-tree",
+          "plastic_and_rubber" => "ss-disc",
+          "metal" => "ss-handbag",
+          "concrete_and_brick" => "ss-form",
+          "glass_and_porcelain" => "ss-fragile",
+          "textile_and_leather" => "ss-hanger",
+          "soil_materials" => "ss-cloud",
+          "liquid_materials" => "ss-droplet",
+          "manufacturing_error_materials" => "ss-wrench",
+          "misc_material" => "ss-box",
+          "clothing" => "ss-hanger",
+          "accessories" => "ss-handbag",
+          "designers" => "ss-star",
+          "mealsharing" => "ss-sidedish",
+          "activities" => "ss-usergroup",
+          "accommodation" => "ss-lodging",
+          "search_material" => "ss-search",
+          "sell_material" => "ss-moneybag",
+          "give_away_material" => "ss-gift",
+          "beekeeping_and_honey" => "ss-waterbottle",
+          "eggs" => "ss-colander",
+          "produce" => "ss-carrot",
+          "other_food_item" => "ss-platter",
+          "food_related_supply" => "ss-cookingutensils",
+          "livestock" => "ss-bird",
+          "seeds_and_starts" => "ss-leaf",
+          "food_related_classes" => "ss-bookmark",
+          "bike" => "ss-bike",
+          "peat" => "ss-cloud",
+          "clay" => "ss-cloud",
+          "silt" => "ss-cloud",
+          "fine_moraine" => "ss-cloud",
+          "coarse_moraine" => "ss-cloud",
+          "sand" => "ss-cloud",
+          "gravel" => "ss-cloud",
+          "rock" => "ss-cloud",
+          "friend_for_languages_or_games" => "ss-users",
+          "location" => "ss-location",
+          "offer_job" => "ss-briefcase",
+          "internship" => "ss-users",
+          "volunteering" => "ss-heart",
+          "parking" => "ss-garage",
+          "meeting_spot" => "ss-usergroup",
+          "work_spot" => "ss-briefcase",
+          "cars" => "ss-car",
+          "raclette_grill" => "ss-cookingutensils",
+      },
+      "font-awesome" => {
+          "map" => "icon-map-marker",
+          "thumbnails" => "icon-th",
+          "new_listing" => "icon-plus-sign-alt",
 
-      "search"  => "icon-search",
-      "globelocation" => "icon-globe",
-      "list" => "icon-reorder",
+          "search" => "icon-search",
+          "globelocation" => "icon-globe",
+          "list" => "icon-reorder",
 
-      "home" => "icon-home",
-      "community" =>"icon-group",
-      "help" => "icon-question-sign",
-      "admin" => "icon-wrench",
+          "home" => "icon-home",
+          "community" => "icon-group",
+          "help" => "icon-question-sign",
+          "admin" => "icon-wrench",
 
-      "directup" => "icon-sort-up",
-      "directdown" => "icon-sort-down",
-      "dropdown" => "icon-caret-down",
-      "directleft" => "icon-caret-left",
-      "directright" => "icon-caret-right",
-      "redirect" => "icon-share",
-      "mail" => "icon-envelope",
-      "notifications" => "icon-globe",
-      "login" => "icon-signin",
-      "logout" => "icon-signout",
-      "feedback" => "icon-bullhorn",
-      "user" => "icon-user",
-      "settings" => " icon-cog",
-      "facebook" => "icon-facebook",
-      "invite" => "icon-users",
-      "download" => "icon-download",
+          "directup" => "icon-sort-up",
+          "directdown" => "icon-sort-down",
+          "dropdown" => "icon-caret-down",
+          "directleft" => "icon-caret-left",
+          "directright" => "icon-caret-right",
+          "redirect" => "icon-share",
+          "mail" => "icon-envelope",
+          "notifications" => "icon-globe",
+          "login" => "icon-signin",
+          "logout" => "icon-signout",
+          "feedback" => "icon-bullhorn",
+          "user" => "icon-user",
+          "settings" => " icon-cog",
+          "facebook" => "icon-facebook",
+          "invite" => "icon-users",
+          "download" => "icon-download",
 
-      "information" => "icon-info-sign",
-      "alert" => "icon-warning-sign",
-      "how_to_use" => "icon-book",
-      "privacy" => "icon-lock",
-      "terms" => "icon-file-alt",
+          "information" => "icon-info-sign",
+          "alert" => "icon-warning-sign",
+          "how_to_use" => "icon-book",
+          "privacy" => "icon-lock",
+          "terms" => "icon-file-alt",
 
-      "offer" => "icon-share",
-      "request" => "icon-lightbulb",
-      "item" => "icon-briefcase",
-      "favor" => "icon-heart",
-      "rideshare" => "icon-truck",
-      "housing" => "icon-building",
-      "other" => "icon-file",
-      "tools" => "icon-wrench",
-      "sports" => "icon-trophy",
-      "music" => "icon-music",
-      "books" => "icon-book",
-      "games" => "icon-magic",
-      "furniture" => "icon-picture",
-      "outdoors" => "icon-fire",
-      "food" => "icon-food",
-      "electronics" => "icon-mobile-phone",
-      "pets" => "icon-github-alt",
-      "film" => "icon-film",
-      "clothes" => "icon-headphones",
-      "garden" => "icon-leaf",
-      "travel" => "icon-plane",
-      "give_away" => "icon-gift",
-      "share_for_free" => "icon-gift",
-      "accept_for_free" => "icon-gift",
-      "lend" => "icon-gift",
-      "borrow" => "icon-gift",
-      "offer_to_swap" => "icon-exchange",
-      "request_to_swap" => "icon-exchange",
-      "buy" => "icon-money",
-      "sell" => "icon-money",
-      "rent" => "icon-money",
-      "rent_out" => "icon-money",
-      "job" => "icon-briefcase",
+          "offer" => "icon-share",
+          "request" => "icon-lightbulb",
+          "item" => "icon-briefcase",
+          "favor" => "icon-heart",
+          "rideshare" => "icon-truck",
+          "housing" => "icon-building",
+          "other" => "icon-file",
+          "tools" => "icon-wrench",
+          "sports" => "icon-trophy",
+          "music" => "icon-music",
+          "books" => "icon-book",
+          "games" => "icon-magic",
+          "furniture" => "icon-picture",
+          "outdoors" => "icon-fire",
+          "food" => "icon-food",
+          "electronics" => "icon-mobile-phone",
+          "pets" => "icon-github-alt",
+          "film" => "icon-film",
+          "clothes" => "icon-headphones",
+          "garden" => "icon-leaf",
+          "travel" => "icon-plane",
+          "give_away" => "icon-gift",
+          "share_for_free" => "icon-gift",
+          "accept_for_free" => "icon-gift",
+          "lend" => "icon-gift",
+          "borrow" => "icon-gift",
+          "offer_to_swap" => "icon-exchange",
+          "request_to_swap" => "icon-exchange",
+          "buy" => "icon-money",
+          "sell" => "icon-money",
+          "rent" => "icon-money",
+          "rent_out" => "icon-money",
+          "job" => "icon-briefcase",
 
-      "testimonial" => "icon-star",
-      "star" => "icon-star",
-      "like" => "icon-thumbs-up",
-      "dislike" => "icon-thumbs-down",
-      "calendar" => "icon-calendar",
-      "phone" => "icon-phone",
-      "clock" => "icon-time",
-      "eye" => "icon-eye-open",
-      "cross" => "icon-remove",
-      "chat_bubble" => "icon-comment",
-      "tag" => "icon-tag",
-      "lock" => "icon-lock",
-      "unlock" => "icon-unlock",
-      "edit" => "icon-edit",
-      "reply" => "icon-reply"
-    }
+          "testimonial" => "icon-star",
+          "star" => "icon-star",
+          "like" => "icon-thumbs-up",
+          "dislike" => "icon-thumbs-down",
+          "calendar" => "icon-calendar",
+          "phone" => "icon-phone",
+          "clock" => "icon-time",
+          "eye" => "icon-eye-open",
+          "cross" => "icon-remove",
+          "chat_bubble" => "icon-comment",
+          "tag" => "icon-tag",
+          "lock" => "icon-lock",
+          "unlock" => "icon-unlock",
+          "edit" => "icon-edit",
+          "reply" => "icon-reply"
+      }
   }
 
   def icon_tag(icon_name, additional_classes=[])
@@ -279,21 +279,31 @@ module ApplicationHelper
     distance_in_minutes = (((to_time - from_time).abs)/60).round
     distance_in_seconds = ((to_time - from_time).abs).round
     case distance_in_minutes
-      when 0..1           then time = (distance_in_seconds < 60) ? t('timestamps.seconds_ago', :count => distance_in_seconds) : t('timestamps.minute_ago', :count => 1)
-      when 2..59          then time = t('timestamps.minutes_ago', :count => distance_in_minutes)
-      when 60..90         then time = t('timestamps.hour_ago', :count => 1)
-      when 90..1440       then time = t('timestamps.hours_ago', :count => (distance_in_minutes.to_f / 60.0).round)
-      when 1440..2160     then time = t('timestamps.day_ago', :count => 1) # 1-1.5 days
-      when 2160..2880     then time = t('timestamps.days_ago', :count => (distance_in_minutes.to_f / 1440.0).round) # 1.5-2 days
+      when 0..1 then
+        time = (distance_in_seconds < 60) ? t('timestamps.seconds_ago', :count => distance_in_seconds) : t('timestamps.minute_ago', :count => 1)
+      when 2..59 then
+        time = t('timestamps.minutes_ago', :count => distance_in_minutes)
+      when 60..90 then
+        time = t('timestamps.hour_ago', :count => 1)
+      when 90..1440 then
+        time = t('timestamps.hours_ago', :count => (distance_in_minutes.to_f / 60.0).round)
+      when 1440..2160 then
+        time = t('timestamps.day_ago', :count => 1) # 1-1.5 days
+      when 2160..2880 then
+        time = t('timestamps.days_ago', :count => (distance_in_minutes.to_f / 1440.0).round) # 1.5-2 days
       #else time = from_time.strftime(t('date.formats.default'))
     end
     if distance_in_minutes > 2880
       distance_in_days = (distance_in_minutes/1440.0).round
       case distance_in_days
-        when 0..30    then time = t('timestamps.days_ago', :count => distance_in_days)
-        when 31..50   then time = t('timestamps.month_ago', :count => 1)
-        when 51..364  then time = t('timestamps.months_ago', :count => (distance_in_days.to_f / 30.0).round)
-        else               time = t('timestamps.years_ago', :count => (distance_in_days.to_f / 365.24).round)
+        when 0..30 then
+          time = t('timestamps.days_ago', :count => distance_in_days)
+        when 31..50 then
+          time = t('timestamps.month_ago', :count => 1)
+        when 51..364 then
+          time = t('timestamps.months_ago', :count => (distance_in_days.to_f / 30.0).round)
+        else
+          time = t('timestamps.years_ago', :count => (distance_in_days.to_f / 365.24).round)
       end
     end
 
@@ -306,7 +316,7 @@ module ApplicationHelper
 
   # used to escape strings to URL friendly format
   def self.escape_for_url(str)
-     URI.escape(str, Regexp.new("[^-_!~*()a-zA-Z\\d]"))
+    URI.escape(str, Regexp.new("[^-_!~*()a-zA-Z\\d]"))
   end
 
   def self.shorten_url(url)
@@ -351,21 +361,21 @@ module ApplicationHelper
   end
 
   def large_avatar_thumb(person, options={})
-    image_tag person.image.url(:medium), { :alt => person.name(@current_community) }.merge(options)
+    image_tag person.image.url(:medium), {:alt => person.name(@current_community)}.merge(options)
   end
 
   def huge_avatar_thumb(person, options={})
     # FIXME! Need a new picture size: :large
-    image_tag person.image.url(:medium), { :alt => person.name(@current_community) }.merge(options)
+    image_tag person.image.url(:medium), {:alt => person.name(@current_community)}.merge(options)
   end
 
   def pageless(total_pages, target_id, url=nil, loader_message='Loading more results')
 
     opts = {
-      :totalPages => total_pages,
-      :url        => url,
-      :loaderMsg  => loader_message,
-      :div1       => target_id
+        :totalPages => total_pages,
+        :url => url,
+        :loaderMsg => loader_message,
+        :div1 => target_id
     }
 
     content_for :extra_javascript do
@@ -380,12 +390,12 @@ module ApplicationHelper
 
   def available_locales
     locales =
-      if @current_community
-        @current_community.locales
-          .map { |loc| Sharetribe::AVAILABLE_LOCALES.find { |app_loc| app_loc[:ident] == loc } }
-      else
-        Sharetribe::AVAILABLE_LOCALES
-      end
+        if @current_community
+          @current_community.locales
+              .map { |loc| Sharetribe::AVAILABLE_LOCALES.find { |app_loc| app_loc[:ident] == loc } }
+        else
+          Sharetribe::AVAILABLE_LOCALES
+        end
 
     locales.map { |loc| [loc[:name], loc[:ident]] }
   end
@@ -397,11 +407,11 @@ module ApplicationHelper
   def self.send_error_notification(message, error_class="Special Error", parameters={})
     if APP_CONFIG.use_airbrake
       Airbrake.notify(
-        :error_class      => error_class,
-        :error_message    => message,
-        :backtrace        => $@,
-        :environment_name => ENV['RAILS_ENV'],
-        :parameters       => parameters)
+          :error_class => error_class,
+          :error_message => message,
+          :backtrace => $@,
+          :environment_name => ENV['RAILS_ENV'],
+          :parameters => parameters)
     end
     Rails.logger.error "#{error_class}: #{message}"
   end
@@ -411,7 +421,7 @@ module ApplicationHelper
   # Now the domain is included in the params, so this is used only in error cases to redirect back
   def self.pick_referer_domain_part_from_request(request)
     return request.headers["HTTP_ORIGIN"] if request.headers["HTTP_ORIGIN"].present?
-    return request.headers["HTTP_REFERER"][/(^[^\/]*(\/\/)?[^\/]+)/,1] if request.headers["HTTP_REFERER"]
+    return request.headers["HTTP_REFERER"][/(^[^\/]*(\/\/)?[^\/]+)/, 1] if request.headers["HTTP_REFERER"]
     return ""
   end
 
@@ -454,6 +464,7 @@ module ApplicationHelper
       t("people.new.email_is_in_use")
     end
   end
+
   # Class methods to access the service_name stored in the thread to work with I18N and DelayedJob etc async stuff.
   def self.store_community_service_name_to_thread(name)
     Thread.current[:current_community_service_name] = name
@@ -503,7 +514,7 @@ module ApplicationHelper
 
   def add_links(text)
     pattern = /[\.)]*$/
-    text.gsub(/https?:\/\/\S+/) { |link_url| link_to(link_url.gsub(pattern,""), link_url.gsub(pattern,""), class: "truncated-link") + link_url.match(pattern)[0]}
+    text.gsub(/https?:\/\/\S+/) { |link_url| link_to(link_url.gsub(pattern, ""), link_url.gsub(pattern, ""), class: "truncated-link") + link_url.match(pattern)[0] }
   end
 
   # general method for making urls as links and line breaks as <br /> tags
@@ -516,7 +527,7 @@ module ApplicationHelper
   # general method for making urls as links and line breaks as <br /> tags
   def add_links_and_br_tags_for_email(text)
     pattern = /[\.)]*$/
-    text.gsub(/https?:\/\/\S+/) { |link_url| link_to(truncate(link_url.gsub(pattern,""), :length => 50, :omission => "..."), link_url.gsub(pattern,""), :style => "color:#d25427;text-decoration:none;") + link_url.match(pattern)[0]}.gsub(/\n/, "<br />")
+    text.gsub(/https?:\/\/\S+/) { |link_url| link_to(truncate(link_url.gsub(pattern, ""), :length => 50, :omission => "..."), link_url.gsub(pattern, ""), :style => "color:#d25427;text-decoration:none;") + link_url.match(pattern)[0] }.gsub(/\n/, "<br />")
   end
 
   def atom_feed_url(params={})
@@ -530,32 +541,32 @@ module ApplicationHelper
   # About view left hand navigation content
   def about_links
     links = [
-      {
-        :text => t('layouts.infos.about'),
-        :icon_class => icon_class("information"),
-        :path => about_infos_path,
-        :name => "about"
-      }
+        {
+            :text => t('layouts.infos.about'),
+            :icon_class => icon_class("information"),
+            :path => about_infos_path,
+            :name => "about"
+        }
     ]
     if @community_customization && !@community_customization.how_to_use_page_content.blank?
       links << {
-        :text => t('layouts.infos.how_to_use'),
-        :icon_class => icon_class("how_to_use"),
-        :path => how_to_use_infos_path,
-        :name => "how_to_use"
+          :text => t('layouts.infos.how_to_use'),
+          :icon_class => icon_class("how_to_use"),
+          :path => how_to_use_infos_path,
+          :name => "how_to_use"
       }
     end
     links << {
-      :text => t('layouts.infos.register_details'),
-      :icon_class => icon_class("privacy"),
-      :path => privacy_infos_path,
-      :name => "privacy"
+        :text => t('layouts.infos.register_details'),
+        :icon_class => icon_class("privacy"),
+        :path => privacy_infos_path,
+        :name => "privacy"
     }
     links << {
-      :text => t('layouts.infos.terms'),
-      :icon_class => icon_class("terms"),
-      :path => terms_infos_path,
-      :name => "terms"
+        :text => t('layouts.infos.terms'),
+        :icon_class => icon_class("terms"),
+        :path => terms_infos_path,
+        :name => "terms"
     }
   end
 
@@ -563,165 +574,166 @@ module ApplicationHelper
   # Admin view left hand navigation content
   def admin_links_for(community)
     links = [
-      {
-        :text => t("admin.communities.getting_started.getting_started"),
-        :icon_class => icon_class("openbook"),
-        :path => getting_started_admin_community_path(@current_community),
-        :name => "getting_started"
-      },
-      {
-        :text => t("admin.left_hand_navigation.support"),
-        :icon_class => icon_class("help"),
-        :path => "mailto:#{APP_CONFIG.support_email}",
-        :name => "support",
-        :data_uv_trigger => "contact"
-      },
-      {
-        :text => t("admin.communities.manage_members.manage_members"),
-        :icon_class => icon_class("community"),
-        :path => admin_community_community_memberships_path(@current_community, sort: "join_date", direction: "desc"),
-        :name => "manage_members"
-      },
-      {
-        :text => t("admin.emails.new.send_email_to_members"),
-        :icon_class => icon_class("send"),
-        :path => new_admin_community_email_path(:community_id => @current_community.id),
-        :name => "email_members"
-      },
-      {
-        :text => t("admin.communities.edit_details.invite_people"),
-        :icon_class => "ss-adduser",
-        :path => new_invitation_path,
-        :name => "invite_people"
-      },
-      {
-        :text => t("admin.communities.transactions.transactions"),
-        :icon_class => icon_class("coins"),
-        :path => admin_community_transactions_path(@current_community, sort: "last_activity", direction: "desc"),
-        :name => "transactions"
-      },
-      {
-        :text => t("admin.communities.edit_details.community_details"),
-        :icon_class => "ss-page",
-        :path => edit_details_admin_community_path(@current_community),
-        :name => "tribe_details"
-      },
-      {
-        :text => t("admin.communities.edit_details.community_look_and_feel"),
-        :icon_class => "ss-paintroller",
-        :path => edit_look_and_feel_admin_community_path(@current_community),
-        :name => "tribe_look_and_feel"
-      },
-      {
-        :text => t("admin.communities.menu_links.menu_links"),
-        :icon_class => icon_class("link"),
-        :path => menu_links_admin_community_path(@current_community),
-        :name => "menu_links"
-      },
-      {
-        :text => t("admin.categories.index.listing_categories"),
-        :icon_class => icon_class("list"),
-        :path => admin_categories_path,
-        :name => "listing_categories"
-      },
-      {
-        :text => t("admin.custom_fields.index.listing_fields"),
-        :icon_class => icon_class("form"),
-        :path => admin_custom_fields_path,
-        :name => "listing_fields"
-      }
+        {
+            :text => t("admin.communities.getting_started.getting_started"),
+            :icon_class => icon_class("openbook"),
+            :path => getting_started_admin_community_path(@current_community),
+            :name => "getting_started"
+        },
+        {
+            :text => t("admin.left_hand_navigation.support"),
+            :icon_class => icon_class("help"),
+            :path => "mailto:#{APP_CONFIG.support_email}",
+            :name => "support",
+            :data_uv_trigger => "contact"
+        },
+        {
+            :text => t("admin.communities.manage_members.manage_members"),
+            :icon_class => icon_class("community"),
+            :path => admin_community_community_memberships_path(@current_community, sort: "join_date", direction: "desc"),
+            :name => "manage_members"
+        },
+        {
+            :text => t("admin.emails.new.send_email_to_members"),
+            :icon_class => icon_class("send"),
+            :path => new_admin_community_email_path(:community_id => @current_community.id),
+            :name => "email_members"
+        },
+        {
+            :text => t("admin.communities.edit_details.invite_people"),
+            :icon_class => "ss-adduser",
+            :path => new_invitation_path,
+            :name => "invite_people"
+        },
+        {
+            :text => t("admin.communities.transactions.transactions"),
+            :icon_class => icon_class("coins"),
+            :path => admin_community_transactions_path(@current_community, sort: "last_activity", direction: "desc"),
+            :name => "transactions"
+        },
+        {
+            :text => t("admin.communities.edit_details.community_details"),
+            :icon_class => "ss-page",
+            :path => edit_details_admin_community_path(@current_community),
+            :name => "tribe_details"
+        },
+        {
+            :text => t("admin.communities.edit_details.community_look_and_feel"),
+            :icon_class => "ss-paintroller",
+            :path => edit_look_and_feel_admin_community_path(@current_community),
+            :name => "tribe_look_and_feel"
+        },
+        {
+            :text => t("admin.communities.menu_links.menu_links"),
+            :icon_class => icon_class("link"),
+            :path => menu_links_admin_community_path(@current_community),
+            :name => "menu_links"
+        },
+        {
+            :text => t("admin.categories.index.listing_categories"),
+            :icon_class => icon_class("list"),
+            :path => admin_categories_path,
+            :name => "listing_categories"
+        },
+        {
+            :text => t("admin.custom_fields.index.listing_fields"),
+            :icon_class => icon_class("form"),
+            :path => admin_custom_fields_path,
+            :name => "listing_fields"
+        }
     ]
 
     # Disabled for Braintree and Checkout
     gw = PaymentGateway.where(community_id: @current_community.id).first
     unless gw
       links << {
-        :text => t("admin.listing_shapes.index.listing_shapes"),
-        :icon_class => icon_class("order_types"),
-        :path => admin_listing_shapes_path,
-        :name => "listing_shapes"
+          :text => t("admin.listing_shapes.index.listing_shapes"),
+          :icon_class => icon_class("order_types"),
+          :path => admin_listing_shapes_path,
+          :name => "listing_shapes"
       }
     end
 
     if PaypalHelper.paypal_active?(@current_community.id)
       links << {
-        :text => t("admin.communities.paypal_account.paypal_admin_account"),
-        :icon_class => icon_class("payments"),
-        :path => admin_community_paypal_preferences_path(@current_community),
-        :name => "paypal_account"
+          :text => t("admin.communities.paypal_account.paypal_admin_account"),
+          :icon_class => icon_class("payments"),
+          :path => admin_community_paypal_preferences_path(@current_community),
+          :name => "paypal_account"
       }
     end
 
     if Maybe(@current_user).is_admin?.or_else { false }
       links << {
-        :text => t("admin.communities.braintree_payment_gateway.braintree_payment_gateway"),
-        :icon_class => icon_class("payments"),
-        :path => payment_gateways_admin_community_path(@current_community),
-        :name => "payment_gateways"
+          :text => t("admin.communities.braintree_payment_gateway.braintree_payment_gateway"),
+          :icon_class => icon_class("payments"),
+          :path => payment_gateways_admin_community_path(@current_community),
+          :name => "payment_gateways"
       }
     end
 
     links << {
-      :text => t("admin.communities.social_media.social_media"),
-      :icon_class => icon_class("social_media"),
-      :path => social_media_admin_community_path(@current_community),
-      :name => "social_media"
+        :text => t("admin.communities.social_media.social_media"),
+        :icon_class => icon_class("social_media"),
+        :path => social_media_admin_community_path(@current_community),
+        :name => "social_media"
     }
 
     links << {
-      :text => t("admin.communities.analytics.analytics"),
-      :icon_class => icon_class("analytics"),
-      :path => analytics_admin_community_path(@current_community),
-      :name => "analytics"
+        :text => t("admin.communities.analytics.analytics"),
+        :icon_class => icon_class("analytics"),
+        :path => analytics_admin_community_path(@current_community),
+        :name => "analytics"
     }
 
     links << {
-      :text => t("admin.communities.edit_text_instructions.edit_text_instructions"),
-      :icon_class => icon_class("edit"),
-      :path => edit_text_instructions_admin_community_path(@current_community),
-      :name => "text_instructions"
+        :text => t("admin.communities.edit_text_instructions.edit_text_instructions"),
+        :icon_class => icon_class("edit"),
+        :path => edit_text_instructions_admin_community_path(@current_community),
+        :name => "text_instructions"
     }
     links << {
-      :text => t("admin.left_hand_navigation.emails_title"),
-      :icon_class => icon_class("mail"),
-      :path => edit_welcome_email_admin_community_path(@current_community),
-      :name => "welcome_email"
+        :text => t("admin.left_hand_navigation.emails_title"),
+        :icon_class => icon_class("mail"),
+        :path => edit_welcome_email_admin_community_path(@current_community),
+        :name => "welcome_email"
     }
     links << {
-      :text => t("admin.communities.settings.settings"),
-      :icon_class => icon_class("settings"),
-      :path => settings_admin_community_path(@current_community),
-      :name => "admin_settings"
+        :text => t("admin.communities.settings.settings"),
+        :icon_class => icon_class("settings"),
+        :path => settings_admin_community_path(@current_community),
+        :name => "admin_settings"
     }
 
     links
   end
+
   # rubocop:enable all
 
   # Settings view left hand navigation content
   def settings_links_for(person, community=nil)
     links = [
-      {
-        :id => "settings-tab-profile",
-        :text => t("layouts.settings.profile"),
-        :icon_class => icon_class("profile"),
-        :path => person_settings_path(person),
-        :name => "profile"
-      },
-      {
-        :id => "settings-tab-account",
-        :text => t("layouts.settings.account"),
-        :icon_class => icon_class("account_settings"),
-        :path => account_person_settings_path(person) ,
-        :name => "account"
-      },
-      {
-        :id => "settings-tab-notifications",
-        :text => t("layouts.settings.notifications"),
-        :icon_class => icon_class("notification_settings"),
-        :path => notifications_person_settings_path(person),
-        :name => "notifications"
-      }
+        {
+            :id => "settings-tab-profile",
+            :text => t("layouts.settings.profile"),
+            :icon_class => icon_class("profile"),
+            :path => person_settings_path(person),
+            :name => "profile"
+        },
+        {
+            :id => "settings-tab-account",
+            :text => t("layouts.settings.account"),
+            :icon_class => icon_class("account_settings"),
+            :path => account_person_settings_path(person),
+            :name => "account"
+        },
+        {
+            :id => "settings-tab-notifications",
+            :text => t("layouts.settings.notifications"),
+            :icon_class => icon_class("notification_settings"),
+            :path => notifications_person_settings_path(person),
+            :name => "notifications"
+        }
     ]
 
     payment_type = MarketplaceService::Community::Query.payment_type(@current_community.id)
@@ -731,11 +743,11 @@ module ApplicationHelper
       path = payment_settings_path(payment_type, @current_user)
 
       links << {
-        :id => "settings-tab-payments",
-        :text => t("layouts.settings.payments"),
-        :icon_class => icon_class("payments"),
-        :path => path,
-        :name => "payments"
+          :id => "settings-tab-payments",
+          :text => t("layouts.settings.payments"),
+          :icon_class => icon_class("payments"),
+          :path => path,
+          :name => "payments"
       }
 
     end
@@ -772,12 +784,12 @@ module ApplicationHelper
   # on the number of new notifications
   def get_badge_class(count)
     case count
-    when 1..9
-      ""
-    when 10..99
-      "big-badge"
-    else
-      "huge-badge"
+      when 1..9
+        ""
+      when 10..99
+        "big-badge"
+      else
+        "huge-badge"
     end
   end
 
@@ -797,12 +809,12 @@ module ApplicationHelper
     community = Maybe(@current_community)
 
     (APP_CONFIG.fb_connect_id || community.facebook_connect_id.or_else(false)) &&
-     !@facebook_merge &&
-     community.facebook_connect_enabled?.or_else(false)
+        !@facebook_merge &&
+        community.facebook_connect_enabled?.or_else(false)
   end
 
   def community_slogan
-    if @community_customization  && !@community_customization.slogan.blank?
+    if @community_customization && !@community_customization.slogan.blank?
       @community_customization.slogan
     else
       if @current_community.slogan && !@current_community.slogan.blank?
@@ -856,11 +868,11 @@ module ApplicationHelper
 
   def with_stylesheet_url(community, &block)
     stylesheet_url = if community.has_custom_stylesheet?
-      stylesheet = community.custom_stylesheet_url
-      is_uri?(stylesheet)  ? stylesheet : "/assets/#{stylesheet}"
-    else
-      'application'
-    end
+                       stylesheet = community.custom_stylesheet_url
+                       is_uri?(stylesheet) ? stylesheet : "/assets/#{stylesheet}"
+                     else
+                       'application'
+                     end
 
     block.call(stylesheet_url)
   end
@@ -890,18 +902,20 @@ module ApplicationHelper
     if run_js_immediately
       js
     else
-      content_for :extra_javascript do js end
+      content_for :extra_javascript do
+        js
+      end
     end
   end
 
   def all_listing_locations(listings)
     listing_loc = []
-    listings.each do |list|
-      puts "#{list.inspect}"
-      listing = Listing.find_by_id(list.id)
-      listing_loc << {c: listing.location.google_address.to_s, lat: listing.location.latitude, long: listing.location.longitude, :u => list.url, :t => list.title}
+    if listings.present?
+      listings.each do |list|
+        listing = Listing.find_by_id(list.id)
+        listing_loc << {c: listing.location.google_address.to_s, lat: listing.location.latitude, long: listing.location.longitude, :u => list.url, :t => list.title}
+      end
     end
-    #puts "#{lat_lang}"
     listing_loc.to_json
   end
 

@@ -16,7 +16,7 @@ module ListingIndexService::API
       end
 
       s = ListingIndexService::DataTypes.create_search_params(search)
-
+      puts s.inspect
       search_result = search_engine.search(
         community_id: community_id,
         search: s,

@@ -218,7 +218,10 @@ class HomepageController < ApplicationController
       filter_params[:categories] = category.own_and_subcategory_ids
       @selected_category = category
     end
-
+     zip = Integer(params[:q]) rescue nil
+    if zip
+       params[:q] = Location.get_city(zip)
+    end
     filter_params[:search] = params[:q] if params[:q]
     filter_params[:custom_dropdown_field_options] = HomepageController.dropdown_field_options_for_search(params)
     filter_params[:custom_checkbox_field_options] = HomepageController.checkbox_field_options_for_search(params)

@@ -14,6 +14,9 @@ ThinkingSphinx::Index.define :listing, :with => :active_record, :delta => Thinki
   indexes description
   indexes custom_field_values(:text_value), :as => :custom_text_fields
   indexes origin_loc.google_address
+  indexes origin_loc.city
+  indexes origin_loc.zip
+  indexes origin_loc.state
 
   # attributes
   has id, :as => :listing_id # id didn't work without :as aliasing
