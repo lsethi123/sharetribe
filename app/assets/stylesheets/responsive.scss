@@ -4,12 +4,16 @@
   }
 }
 
+@media only screen and (max-width : 700px) {
+  .home-page-cover-photo {
+    background-position: center center !important;
+    height: 22.8125em !important;
+  }
+}
+
 @media only screen and (max-width : 650px) {
   .home-header-text {
     font-size: 23px;
-  }
-  .home-page-cover-photo {
-    background-position: center center !important;
   }
 }
 

@@ -231,11 +231,34 @@ function update_model_location(place,_prefix){
   var latitude = document.getElementById(_prefix+ "_latitude");
   var longitude = document.getElementById(_prefix+ "_longitude");
   var google_address = document.getElementById(_prefix+ "_google_address");
-
+  var city = document.getElementById(_prefix+ "_city");
+  var zip = document.getElementById(_prefix+ "_zip");
+  var state = document.getElementById(_prefix+ "_state");
   address.value = place[0].formatted_address;
   latitude.value = place[0].geometry.location.lat();
   longitude.value = place[0].geometry.location.lng();
   google_address.value = place[0].formatted_address;
+    /* Code added for getting city from lat lan */
+    var address_component = place[0]['address_components']
+    for (var i=0; i < address_component.length; i++){
+        type = address_component[i]['types'][0]
+        switch(type) {
+            case 'administrative_area_level_1':
+                state.value = address_component[i].long_name
+                break;
+            case 'administrative_area_level_2':
+                console.log(type);
+                city.value = address_component[i].long_name;
+                break;
+            case 'postal_code':
+                zip.value = address_component[i].long_name
+                break;
+        }
+    }
+
+    /* Code added for getting city from lat lan */
+
+
   manually_validate(_prefix);
 }
 
@@ -400,7 +423,8 @@ function updateEditTextBoxes() {
   document.getElementById("listing_origin_loc_attributes_longitude").value = directionsDisplay.getDirections().routes[0].legs[0].start_location.lng();
   document.getElementById("listing_destination_loc_attributes_latitude").value = directionsDisplay.getDirections().routes[0].legs[0].end_location.lat();
   document.getElementById("listing_destination_loc_attributes_longitude").value = directionsDisplay.getDirections().routes[0].legs[0].end_location.lng();
-  manually_validate("listing_destination");
+  console.log(directionsDisplay.getDirections())
+    manually_validate("listing_destination");
   manually_validate("listing_origin");
 }
 

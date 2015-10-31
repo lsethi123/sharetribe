@@ -187,9 +187,13 @@ header {
   }
 }
 
-.home-page-cover-photo {
-  background-position: 0 52% !important;
-  height: 550px !important;
+.marketplace-lander {
+  .coverimage {
+    figure.home-page-cover-photo {
+      background-position: 0 52%;
+      height: 550px;
+    }
+  }
 }
 
 .shyftn-quoate {
