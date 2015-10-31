@@ -220,9 +220,11 @@ class HomepageController < ApplicationController
     end
      zip = Integer(params[:q]) rescue nil
     if zip
-       params[:q] = Location.get_city(zip)
+       state = Location.get_city(zip)
+    else
+      state = params[:q]
     end
-    filter_params[:search] = params[:q] if params[:q]
+    filter_params[:search] = state
     filter_params[:custom_dropdown_field_options] = HomepageController.dropdown_field_options_for_search(params)
     filter_params[:custom_checkbox_field_options] = HomepageController.checkbox_field_options_for_search(params)
 
