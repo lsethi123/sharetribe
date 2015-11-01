@@ -120,6 +120,7 @@ class HomepageController < ApplicationController
       add = address.city << ',' << address.state
       address_hash << add
     end
+    address_hash = address_hash.uniq
     render :json => address_hash
   end
 
