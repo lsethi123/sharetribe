@@ -117,7 +117,8 @@ class HomepageController < ApplicationController
     address = Location.suggest_by_name(params[:term])
     address_hash = []
     address.each do |address|
-      address_hash << address.address
+      add = address.city << ',' << address.state
+      address_hash << add
     end
     render :json => address_hash
   end
@@ -222,7 +223,10 @@ class HomepageController < ApplicationController
     if zip
        state = Location.get_city(zip)
     else
-      state = params[:q]
+      if params[:q].present?
+        search_key = params[:q].split(',')
+        state = search_key.last
+      end
     end
     filter_params[:search] = state
     filter_params[:custom_dropdown_field_options] = HomepageController.dropdown_field_options_for_search(params)

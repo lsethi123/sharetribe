@@ -30,7 +30,7 @@ class Location < ActiveRecord::Base
   belongs_to :listing
   belongs_to :community
 
-  scope :suggest_by_name, lambda{|address| select("DISTINCT(address)").where("lower(address) like lower(?) or lower(google_address) like lower(?)", "% #{address}%", "#{address}%")}
+  scope :suggest_by_name, lambda{|address| select("DISTINCT * ").where("lower(address) like lower(?) or lower(google_address) like lower(?) or lower(city) like lower(?) or lower(state) like lower(?)", "% #{address}%", "%#{address}%", "%#{address}%","%#{address}%")}
 
 
   def search_and_fill_latlng(address=nil, locale=APP_CONFIG.default_locale)
@@ -58,7 +58,6 @@ class Location < ActiveRecord::Base
    def self.get_city(zip)
      location = Location.find_by_zip(zip)
      return location.state if location.present?
-     puts("here")
      state =''
      geocoder = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=#{zip}&region=us"
      if(geocoder.present?)
