@@ -10,4 +10,5 @@
           = link_to(person_path(id: listing.author.username)) do
             = image_tag(listing.author.avatar.thumb, :class => "home-fluid-thumbnail-grid-author-avatar-image")
         = link_to(person_path(id: listing.author.username), :class => "home-fluid-thumbnail-grid-author-name") do
-          = PersonViewUtils::person_entity_display_name(listing.author, @current_community.name_display_type)
+          %b
+            = PersonViewUtils::person_entity_display_name(listing.author, @current_community.name_display_type)

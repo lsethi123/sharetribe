@@ -69,11 +69,15 @@
     .row
       .col-12
         - if @listing.description && !@listing.description.blank?
-          - text_with_line_breaks do
+          -#- text_with_line_breaks do
+          %b
             = @listing.title
-            = @listing.origin_loc.city
-            = @listing.origin_loc.state
-            = @listing.description
+          %br
+          = @listing.origin_loc.city
+          = ','
+          = @listing.origin_loc.state
+          %br
+          = @listing.description
 
     - @listing.custom_field_values.each do |custom_field_value|
       .row
