@@ -111,6 +111,10 @@ module ListingsHelper
     end
   end
 
+  def get_listing_city(listing_id)
+    Location.find_by_listing_id(listing_id)
+  end
+
   def price_quantity_per_unit(listing)
     quantity =
       if listing.unit_type.present?

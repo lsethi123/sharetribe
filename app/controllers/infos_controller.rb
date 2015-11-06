@@ -8,8 +8,9 @@ class InfosController < ApplicationController
   end
 
   def how_to_use
-    @selected_tribe_navi_tab = "about"
+    @small_cover = true
     @selected_left_navi_link = "how_to_use"
+    @selected_tribe_navi_tab = "about"
     case(how_to_use_content?)
     when None, Some(false)
       raise ActiveRecord::RecordNotFound

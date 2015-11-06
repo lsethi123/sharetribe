@@ -540,14 +540,7 @@ module ApplicationHelper
 
   # About view left hand navigation content
   def about_links
-    links = [
-        {
-            :text => t('layouts.infos.about'),
-            :icon_class => icon_class("information"),
-            :path => about_infos_path,
-            :name => "about"
-        }
-    ]
+    links = []
     if @community_customization && !@community_customization.how_to_use_page_content.blank?
       links << {
           :text => t('layouts.infos.how_to_use'),
@@ -556,6 +549,12 @@ module ApplicationHelper
           :name => "how_to_use"
       }
     end
+    links << {
+        :text => t('layouts.infos.about'),
+        :icon_class => icon_class("information"),
+        :path => about_infos_path,
+        :name => "about"
+    }
     links << {
         :text => t('layouts.infos.register_details'),
         :icon_class => icon_class("privacy"),
@@ -884,7 +883,11 @@ module ApplicationHelper
 
   # Render block only if small cover photo should be shown
   def with_small_cover_photo(&block)
-    block.call unless show_big_cover_photo?
+     block.call unless (show_big_cover_photo? || not_show_small_cover_photo?)
+  end
+
+  def not_show_small_cover_photo?
+    @small_cover
   end
 
   def show_big_cover_photo?

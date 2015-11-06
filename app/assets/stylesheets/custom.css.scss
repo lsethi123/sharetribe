@@ -65,6 +65,7 @@ header {
   position: relative;
   .title-container {
     top: 60px !important;
+    margin: 30px;
   }
 }
 
@@ -181,7 +182,7 @@ header {
   text-align: center;
   font-size: 36px;
   font-weight: bold;
-  margin: 15px 0 55px;
+  margin: 15px 0 55px !important;
   &.visible-tablet {
     font-size: 24px;
   }
@@ -308,4 +309,8 @@ header {
 
 .copyright p {
   font-size: 14px;
+}
+
+.js-form-fields a {
+  color: #0b97c4;
 }

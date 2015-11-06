@@ -15,6 +15,10 @@
     .fluid-thumbnail-grid-image-overlay{:class => "#{modifier_class}"}
     .fluid-thumbnail-grid-image-title{:class => "#{modifier_class}"}
       = listing.title
+      %br/
+      = get_listing_city(listing.id).city
+      %br/
+      = get_listing_city(listing.id).state
 
     .fluid-thumbnail-grid-image-price-container{:class => "#{modifier_class}"}
       - if listing.price
