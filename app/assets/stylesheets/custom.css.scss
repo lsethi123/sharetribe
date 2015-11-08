@@ -262,12 +262,20 @@ header {
 }
 
 .join-now-link {
-  color: #ffffff;
+  color: #08ba0b;
   font-weight: bolder;
 }
 
+.green_part_link {
+  color: #08ba0b;
+}
+
+.green_part_link:hover {
+  color: #057107 !important;
+}
+
 .join-now-link:hover{
-  color: #2754e8 !important;
+  color: #057107 !important;
 }
 
 .map-search-listing {
@@ -312,5 +320,17 @@ header {
 }
 
 .js-form-fields a {
-  color: #0b97c4;
+  color:  #08ba0b;
+}
+
+.item-title {
+  font-size: 20px;
+}
+
+.item-city {
+  font-size: 14px;
+}
+
+.home-toolbar-show-filters-button-container {
+
 }

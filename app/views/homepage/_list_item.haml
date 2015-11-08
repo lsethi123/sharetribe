@@ -27,11 +27,13 @@
     %div{:class => (listing.listing_images.size > 0 ? "home-list-details-with-image" : "")}
       %h2.home-list-title
         = link_to listing_path(listing.url) do
-          = listing.title
-          %br/
-          = get_listing_city(listing.id).city
-          %br/
-          = get_listing_city(listing.id).state
+          %span{:class => 'item-title'}
+            = listing.title
+          %br
+          %span{:class => 'item-city'}
+            = get_listing_city(listing.id).city
+            = ','
+            = get_listing_city(listing.id).state
           - if @current_community.show_category_in_listing_list
             %a.home-share-type-link{:href => root_path(:transaction_type => shape_name_map[listing.listing_shape_id], :view => :list)}
               = icon_tag(listing.icon_name, ["icon-fix"])
