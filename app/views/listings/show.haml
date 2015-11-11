@@ -71,11 +71,13 @@
         - if @listing.description && !@listing.description.blank?
           -#- text_with_line_breaks do
           %b
-            = @listing.title
+            %span{:class => 'item-title'}
+              = @listing.title
           %br
-          = @listing.origin_loc.city
-          = ','
-          = @listing.origin_loc.state
+          %span{:class => 'item-city'}
+            = @listing.origin_loc.city
+            = ','
+            = @listing.origin_loc.state
           %br
           = @listing.description
 

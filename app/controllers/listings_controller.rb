@@ -12,7 +12,7 @@ class ListingsController < ApplicationController
   end
 
   before_filter :only => [ :new, :new_form_content, :create ] do |controller|
-    controller.ensure_logged_in t("layouts.notifications.you_must_log_in_to_create_new_listing", :sign_up_link => view_context.link_to(t("layouts.notifications.create_one_here"), sign_up_path)).html_safe
+    controller.ensure_logged_in t("layouts.notifications.you_must_log_in_to_create_new_listing", :sign_up_link => view_context.link_to(t("layouts.notifications.create_one_here"), sign_up_path, class: "green_part_link")).html_safe
   end
 
   before_filter :save_current_path, :only => :show
