@@ -27,7 +27,7 @@ class HomepageController < ApplicationController
 
     @app_store_badge_filename = "/assets/Available_on_the_App_Store_Badge_en_135x40.svg"
     if File.exists?("app/assets/images/Available_on_the_App_Store_Badge_#{I18n.locale}_135x40.svg")
-       @app_store_badge_filename = "/assets/Available_on_the_App_Store_Badge_#{I18n.locale}_135x40.svg"
+      @app_store_badge_filename = "/assets/Available_on_the_App_Store_Badge_#{I18n.locale}_135x40.svg"
     end
 
     filter_params = {}
@@ -44,20 +44,20 @@ class HomepageController < ApplicationController
     per_page = @view_type == "map" ? APP_CONFIG.map_listings_limit : APP_CONFIG.grid_listings_limit
 
     includes =
-      case @view_type
-      when "grid"
-        [:author, :listing_images]
-      when "list"
-        [:author, :listing_images, :num_of_reviews]
-      when "map"
-        [:location]
-      else
-        raise ArgumentError.new("Unknown view_type #{@view_type}")
-      end
+        case @view_type
+          when "grid"
+            [:author, :listing_images]
+          when "list"
+            [:author, :listing_images, :num_of_reviews]
+          when "map"
+            [:location]
+          else
+            raise ArgumentError.new("Unknown view_type #{@view_type}")
+        end
 
     search_result = find_listings(params, per_page, compact_filter_params, includes.to_set)
 
-    shape_name_map = all_shapes.map { |s| [s[:id], s[:name]]}.to_h
+    shape_name_map = all_shapes.map { |s| [s[:id], s[:name]] }.to_h
 
     if request.xhr? # checks if AJAX request
       search_result.on_success { |listings|
@@ -66,7 +66,7 @@ class HomepageController < ApplicationController
         if @view_type == "grid" then
           render :partial => "grid_item", :collection => @listings, :as => :listing
         else
-          render :partial => "list_item", :collection => @listings, :as => :listing, locals: { shape_name_map: shape_name_map, testimonials_in_use: @current_community.testimonials_in_use }
+          render :partial => "list_item", :collection => @listings, :as => :listing, locals: {shape_name_map: shape_name_map, testimonials_in_use: @current_community.testimonials_in_use}
         end
       }.on_error {
         render nothing: true, status: 500
@@ -75,22 +75,22 @@ class HomepageController < ApplicationController
       search_result.on_success { |listings|
         @listings = listings
         render locals: {
-                 shapes: all_shapes,
-                 show_price_filter: show_price_filter,
-                 selected_shape: selected_shape,
-                 shape_name_map: shape_name_map,
-                 testimonials_in_use: @current_community.testimonials_in_use,
-                 listing_shape_menu_enabled: listing_shape_menu_enabled }
+                   shapes: all_shapes,
+                   show_price_filter: show_price_filter,
+                   selected_shape: selected_shape,
+                   shape_name_map: shape_name_map,
+                   testimonials_in_use: @current_community.testimonials_in_use,
+                   listing_shape_menu_enabled: listing_shape_menu_enabled}
       }.on_error { |e|
         flash[:error] = t("layouts.notifications.something_went_wrong")
         @listings = Listing.none.paginate(:per_page => 1, :page => 1)
         render status: 500, locals: {
-                 shapes: all_shapes,
-                 show_price_filter: show_price_filter,
-                 selected_shape: selected_shape,
-                 shape_name_map: shape_name_map,
-                 testimonials_in_use: @current_community.testimonials_in_use,
-                 listing_shape_menu_enabled: listing_shape_menu_enabled }
+                              shapes: all_shapes,
+                              show_price_filter: show_price_filter,
+                              selected_shape: selected_shape,
+                              shape_name_map: shape_name_map,
+                              testimonials_in_use: @current_community.testimonials_in_use,
+                              listing_shape_menu_enabled: listing_shape_menu_enabled}
       }
     end
   end
@@ -177,7 +177,7 @@ class HomepageController < ApplicationController
 
     search_result = find_listings(params, per_page, compact_filter_params, includes.to_set)
 
-    shape_name_map = all_shapes.map { |s| [s[:id], s[:name]]}.to_h
+    shape_name_map = all_shapes.map { |s| [s[:id], s[:name]] }.to_h
 
     if request.xhr? # checks if AJAX request
       search_result.on_success { |listings|
@@ -186,7 +186,7 @@ class HomepageController < ApplicationController
         if @view_type == "grid" then
           render :partial => "grid_item", :collection => @listings, :as => :listing
         else
-          render :partial => "list_item", :collection => @listings, :as => :listing, locals: { shape_name_map: shape_name_map, testimonials_in_use: @current_community.testimonials_in_use }
+          render :partial => "list_item", :collection => @listings, :as => :listing, locals: {shape_name_map: shape_name_map, testimonials_in_use: @current_community.testimonials_in_use}
         end
       }.on_error {
         render nothing: true, status: 500
@@ -200,7 +200,7 @@ class HomepageController < ApplicationController
                    selected_shape: selected_shape,
                    shape_name_map: shape_name_map,
                    testimonials_in_use: @current_community.testimonials_in_use,
-                   listing_shape_menu_enabled: listing_shape_menu_enabled }
+                   listing_shape_menu_enabled: listing_shape_menu_enabled}
       }.on_error { |e|
         flash[:error] = t("layouts.notifications.something_went_wrong")
         @listings = Listing.none.paginate(:per_page => 1, :page => 1)
@@ -210,7 +210,7 @@ class HomepageController < ApplicationController
                               selected_shape: selected_shape,
                               shape_name_map: shape_name_map,
                               testimonials_in_use: @current_community.testimonials_in_use,
-                              listing_shape_menu_enabled: listing_shape_menu_enabled }
+                              listing_shape_menu_enabled: listing_shape_menu_enabled}
       }
     end
   end
@@ -222,12 +222,17 @@ class HomepageController < ApplicationController
       filter_params[:categories] = category.own_and_subcategory_ids
       @selected_category = category
     end
-     zip = Integer(params[:q]) rescue nil
+    search_query = params[:query].present? ? params[:query] : params[:q]
+    #params.delete('query')
+    puts("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    puts(search_query.inspect)
+    puts("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    zip = Integer(search_query) rescue nil
     if zip
-       state = Location.get_city(zip)
+      state = Location.get_city(zip)
     else
-      if params[:q].present?
-        search_key = params[:q].split(',')
+      if search_query.present?
+        search_key = search_query.split(',')
         state = search_key.last
       end
     end
@@ -243,7 +248,7 @@ class HomepageController < ApplicationController
     numeric_search_params = HomepageController.filter_unnecessary(p, @current_community.custom_numeric_fields)
 
     filter_params = filter_params.reject {
-      |_, value| (value == "all" || value == ["all"])
+        |_, value| (value == "all" || value == ["all"])
     } # all means the filter doesn't need to be included
 
     checkboxes = filter_params[:custom_checkbox_field_options].map { |checkbox_field| checkbox_field.merge(type: :selection_group, operator: :and) }
@@ -251,24 +256,24 @@ class HomepageController < ApplicationController
     numbers = numeric_search_params.map { |numeric| numeric.merge(type: :numeric_range) }
 
     search = {
-      # Add listing_id
-      categories: filter_params[:categories],
-      listing_shape_id: Maybe(filter_params)[:listing_shape].or_else(nil),
-      price_cents: filter_params[:price_cents],
-      keywords: filter_params[:search],
-      fields: checkboxes.concat(dropdowns).concat(numbers),
-      per_page: listings_per_page,
-      page: params[:page] || 1,
+        # Add listing_id
+        categories: filter_params[:categories],
+        listing_shape_id: Maybe(filter_params)[:listing_shape].or_else(nil),
+        price_cents: filter_params[:price_cents],
+        keywords: filter_params[:search],
+        fields: checkboxes.concat(dropdowns).concat(numbers),
+        per_page: listings_per_page,
+        page: params[:page] || 1,
     }
 
     ListingIndexService::API::Api.listings.search(community_id: @current_community.id, search: search, includes: includes).and_then { |res|
       Result::Success.new(
-        ListingIndexViewUtils.to_struct(
-        result: res,
-        includes: includes,
-        page: search[:page],
-        per_page: search[:per_page]
-      ))
+          ListingIndexViewUtils.to_struct(
+              result: res,
+              includes: includes,
+              page: search[:page],
+              per_page: search[:per_page]
+          ))
     }
   end
 
@@ -303,22 +308,22 @@ class HomepageController < ApplicationController
 
   def self.group_to_ranges(parsed_params)
     parsed_params
-      .group_by { |param| param[:id] }
-      .map do |key, values|
-        boundaries = values.inject(:merge)
+        .group_by { |param| param[:id] }
+        .map do |key, values|
+      boundaries = values.inject(:merge)
 
-        {
+      {
           id: key,
           value: (boundaries[:min].to_f..boundaries[:max].to_f)
-        }
-      end
+      }
+    end
   end
 
   # Filter search params if their values equal min/max
   def self.filter_unnecessary(search_params, numeric_fields)
     search_params.reject do |search_param|
       numeric_field = numeric_fields.find(search_param[:id])
-      search_param == { id: numeric_field.id, value: (numeric_field.min..numeric_field.max) }
+      search_param == {id: numeric_field.id, value: (numeric_field.min..numeric_field.max)}
     end
   end
 
@@ -326,8 +331,8 @@ class HomepageController < ApplicationController
     option_ids = HashUtils.select_by_key_regexp(params, regexp).values
 
     array_for_search = CustomFieldOption.find(option_ids)
-      .group_by { |option| option.custom_field_id }
-      .map { |key, selected_options| {id: key, value: selected_options.collect(&:id) } }
+                           .group_by { |option| option.custom_field_id }
+                           .map { |key, selected_options| {id: key, value: selected_options.collect(&:id)} }
   end
 
   def self.dropdown_field_options_for_search(params)

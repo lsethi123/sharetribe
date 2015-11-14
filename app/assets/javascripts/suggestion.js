@@ -11,17 +11,17 @@
 //  }//});
 
 $(function () {
-    $("#q").autoComplete({
-        minChars: 2,
-        source: function (term, response) {
-            $.getJSON("/homepage/search_by_address?term=" + term, function (data) {
-                console.log(data);
-                response(data);
-            });
-        }
+    //$("#q").autoComplete({
+    //    minChars: 2,
+    //    source: function (term, response) {
+    //        $.getJSON("/homepage/search_by_address?term=" + term, function (data) {
+    //            console.log(data);
+    //            response(data);
+    //        });
+    //    }
         //focus: function (event, ui) {
         //    $('#q').val(ui.item.name);
         //    return false;
         //}
-    });
+    //});
 });

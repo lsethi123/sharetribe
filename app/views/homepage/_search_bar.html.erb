@@ -1,0 +1,51 @@
+<div class="search-form-input search-form-text-field">
+  <%= text_field_tag "q", params[:q], :placeholder => (@community_customization && @community_customization.search_placeholder) || t("homepage.index.what_do_you_need"), :onkeypress => 'return noSubmitOnReturn(event)' %>
+  <%= hidden_field_tag 'query', '', value: params[:query] %>
+</div>
+<div class="search-form-input">
+  <button class="action-button" id="search-button" type="submit">
+    <%= icon_tag("search", ["icon-part"]) %>
+  </button>
+</div>
+<script type="text/javascript">
+    var autocomplete;
+    function init_autocomplete() {
+        var input = (document.getElementById('q'));
+//        var countryRestrict = {'country': 'bd'};
+        var options = {
+//            componentRestrictions: countryRestrict,
+//            types: ['(cities)']
+        };
+        autocomplete = new google.maps.places.Autocomplete(input, options);
+        autocomplete.addListener('place_changed', get_place);
+    }
+
+    function get_place() {
+        var city = '';
+        var state = '';
+        var place = autocomplete.getPlace();
+        var address_component = place['address_components'];
+        for (var i = 0; i < address_component.length; i++) {
+            type = address_component[i]['types'][0];
+            switch (type) {
+                case 'administrative_area_level_1':
+                    state = address_component[i].long_name;
+                    break;
+                case 'administrative_area_level_2':
+                    console.log(type);
+                    city = address_component[i].long_name;
+                    break;
+            }
+        }
+        var query = city + ', ' + state;
+        $('#query').val(query);
+        $('#q').parents('form').submit();
+        //$('#search-listing').submit();
+    }
+
+    function noSubmitOnReturn(e) {
+        if (e.keyCode == 13) {
+            return false;
+        }
+    }
+</script>

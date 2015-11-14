@@ -2,7 +2,7 @@
   initialize_homepage();
 
 - content_for :extra_javascript do
-  = javascript_include_tag "https://maps.google.com/maps/api/js?sensor=true"
+  = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyD-m1XVD7c3PfBX_oxxKijOqeyNNqOSUW0&libraries=places&callback=init_autocomplete"
 
 - content_for :title_header do
   %section.marketplace-lander
@@ -32,9 +32,10 @@
 
 .home-toolbar
   #search
-    = text_field_tag "q", params[:q], :placeholder => (@community_customization && @community_customization.search_placeholder) || t("homepage.index.what_do_you_need")
-    %button.action-button#search-button{type: 'submit'}
-      = icon_tag("search", ["icon-part"])
+    -#= text_field_tag "q", params[:q], :placeholder => (@community_customization && @community_customization.search_placeholder) || t("homepage.index.what_do_you_need")
+    -#%button.action-button#search-button{type: 'submit'}
+    -#  = icon_tag("search", ["icon-part"])
+    = render 'search_bar'
 
   - if listing_shape_menu_enabled || @category_menu_enabled
     .home-toolbar-show-filters-button-container

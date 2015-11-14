@@ -1,3 +1,4 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-m1XVD7c3PfBX_oxxKijOqeyNNqOSUW0&libraries=places&callback=init_autocomplete" async defer></script>
 <section class="marketplace-lander" style="padding: 0;">
   <div class="coverimage">
     <figure class="marketplace-cover fluidratio home-page-cover-photo" style="background-image: url(<%= @current_community.cover_photo.url(:original) %>)"></figure>
@@ -17,7 +18,7 @@
   </div>
   <div class="home-page-wrapper" style="position: absolute; width: 100%; bottom: 0px;">
     <div style="margin: 30px auto 25px; width: 58%; min-width: 300px;">
-      <form action="<%= home_listing_path %>" method="get">
+      <form id='search-listing' action="<%= home_listing_path %>" method="get">
         <div class="home-search" id='search'>
           <%= render :partial => 'homepage/search_bar' %>
         </div>
