@@ -11,10 +11,8 @@
     var autocomplete;
     function init_autocomplete() {
         var input = (document.getElementById('q'));
-//        var countryRestrict = {'country': 'bd'};
         var options = {
-//            componentRestrictions: countryRestrict,
-//            types: ['(cities)']
+            types: ['(regions)']
         };
         autocomplete = new google.maps.places.Autocomplete(input, options);
         autocomplete.addListener('place_changed', get_place);
