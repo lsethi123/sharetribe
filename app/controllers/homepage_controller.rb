@@ -224,9 +224,7 @@ class HomepageController < ApplicationController
     end
     search_query = params[:query].present? ? params[:query] : params[:q]
     #params.delete('query')
-    puts("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
-    puts(search_query.inspect)
-    puts("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+
     zip = Integer(search_query) rescue nil
     if zip
       state = Location.get_city(zip)
