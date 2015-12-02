@@ -119,7 +119,7 @@ Kassi::Application.configure do
       port:                 587,
       domain:               'gmail.com',
       user_name:            'contact@shyftn.com',
-      password:             'Mazda888',
+      password:             '245-E8q-56Q-fhH',
       authentication:       'plain',
       enable_starttls_auto: true  }
 
