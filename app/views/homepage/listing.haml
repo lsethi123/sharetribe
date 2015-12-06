@@ -15,7 +15,7 @@
         .title-header-wrapper
           .marketplace-title-header
             %h1
-              -if params[:view].present?
+              -if (params[:view].present? || params[:q].present?)
                 Search
               -else
                 Browse and Rent a Jet Ski From Someone Like you
