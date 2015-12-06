@@ -17,6 +17,7 @@
             %h1
               -if (params[:view].present? || params[:q].present?)
                 Search
+                =params.inspect
               -else
                 Browse and Rent a Jet Ski From Someone Like you
     - with_big_cover_photo do
