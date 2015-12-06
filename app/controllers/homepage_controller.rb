@@ -106,7 +106,7 @@ class HomepageController < ApplicationController
   end
 
   def coverage
-    @small_cover = true
+    #@small_cover = true
 
   end
 
@@ -128,7 +128,7 @@ class HomepageController < ApplicationController
 
   def listing
     @homepage = true
-    @small_cover = true
+    # @small_cover = true
 
     @view_type = HomepageController.selected_view_type(params[:view], @current_community.default_browse_view, APP_DEFAULT_VIEW_TYPE, VIEW_TYPES)
 
