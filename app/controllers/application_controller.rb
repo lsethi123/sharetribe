@@ -46,6 +46,40 @@ class ApplicationController < ActionController::Base
 
   helper_method :root, :logged_in?, :current_user?
 
+  def ips_distance(listing_id, geo_coder)
+    location = Location.find_by_listing_id(listing_id)
+    lat1 = location.latitude
+    lon1 = location.longitude
+    lat2 = geo_coder[:lat]
+    lon2 = geo_coder[:lon]
+    pai = 0.017453292519943295;    # Math.PI / 180
+    distance = 0.5 - Math.cos((lat2 - lat1) * pai)/2 +
+        Math.cos(lat1 * pai) * Math.cos(lat2 * pai) *
+                (1 - Math.cos((lon2 - lon1) * pai))/2
+
+    12742 * Math.asin(Math.sqrt(distance))
+  end
+
+  def get_user_location(ip)
+    if ENV['RAILS_ENV'] == 'Development'
+     ip = '103.15.140.69'
+    end
+    require 'net/http'
+    location = {lat: 0, lon: 0}
+    url = URI.parse("http://freegeoip.net/json/#{ip}")
+    req = Net::HTTP::Get.new(url.to_s)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+      http.request(req)
+    }
+    response = res.body
+    if response.present?
+      response = JSON.parse(response)
+      location[:lat] = response['latitude'].to_i
+      location[:lon] = response['longitude'].to_i
+    end
+    location
+  end
+
   def redirect_removed_locale
     if params[:locale] && Kassi::Application.config.REMOVED_LOCALES.include?(params[:locale])
       fallback = Kassi::Application.config.REMOVED_LOCALE_FALLBACKS[params[:locale]]

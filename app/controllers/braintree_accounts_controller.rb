@@ -64,6 +64,7 @@ class BraintreeAccountsController < ApplicationController
     @create_path = create_braintree_settings_payment_path(@current_user)
     @show_path = show_braintree_settings_payment_path(@current_user)
     @new_path = new_braintree_settings_payment_path(@current_user)
+    @update_path = update_braintree_settings_payment_path(@current_user)
   end
 
   # New/create
@@ -135,6 +136,27 @@ class BraintreeAccountsController < ApplicationController
       flash[:error] ||= t("layouts.notifications.payment_details_add_error")
       render :new, locals: { form_action: @create_path }
     end
+  end
+
+  def edit
+    @list_of_states = LIST_OF_STATES
+    @braintree_account = @current_user.braintree_account
+    render locals: { form_action: @update_path }
+  end
+
+  def update
+
+    #@current_user.braintree_account.delete
+   success = BraintreeApi.braintree_account_update(@current_user.id, @current_community, params[:braintree_account])
+   if success == "true"
+     flash[:notice] = "Successfully updated"
+     redirect_to @show_path
+   else
+     flash[:error] ||= success
+     redirect_to @show_path
+   end
+
+
   end
 
   private

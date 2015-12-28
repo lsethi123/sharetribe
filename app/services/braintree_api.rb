@@ -59,6 +59,48 @@ class BraintreeApi
       end
     end
 
+    def braintree_account_update(id , community,account_details)
+      with_braintree_config(community) do
+        result = Braintree::MerchantAccount.update(
+            id.to_s,
+            :individual => {
+                :first_name => account_details[:first_name],
+                :last_name => account_details[:last_name],
+                :email => account_details[:email],
+                :phone => account_details[:phone],
+                :address => {
+                    :street_address => account_details[:address_street_address],
+                    :locality => account_details[:address_locality],
+                    :region => account_details[:address_region],
+                    :postal_code => account_details[:address_postal_code],
+                },
+            },
+            :funding => {
+                :destination => Braintree::MerchantAccount::FundingDestination::Bank,
+                :account_number => account_details[:account_number],
+                :routing_number => account_details[:routing_number],
+            },
+        )
+
+        if result.success?
+          p "Merchant account successfully updated"
+          success = "true"
+          braintree_account = BraintreeAccount.find_by_person_id(id)
+          account_details = account_details.merge(hidden_account_number: StringUtils.trim_and_hide(account_details[:account_number]))
+          account_details = account_details.merge(status: result.merchant_account.status)
+          braintree_account.update_attributes(account_details)
+
+         return success
+        else
+          p result.errors
+          success = result.errors
+          return success
+        end
+      end
+
+
+    end
+
     def transaction_sale(community, options)
       with_braintree_config(community) do
         Braintree::Transaction.create(options)

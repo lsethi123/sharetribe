@@ -179,9 +179,12 @@ class HomepageController < ApplicationController
 
     shape_name_map = all_shapes.map { |s| [s[:id], s[:name]] }.to_h
 
+    user_ip = request.remote_ip
+    geo_coder = get_user_location(user_ip)
+
     if request.xhr? # checks if AJAX request
       search_result.on_success { |listings|
-        @listings = listings # TODO Remove
+        @listings = listings.sort! { |a, b| a.title.downcase <=> b.title.downcase } # TODO Remove
 
         if @view_type == "grid" then
           render :partial => "grid_item", :collection => @listings, :as => :listing
@@ -193,7 +196,7 @@ class HomepageController < ApplicationController
       }
     else
       search_result.on_success { |listings|
-        @listings = listings
+        @listings = listings.sort! { |a, b| ips_distance(a.id, geo_coder) <=> ips_distance(b.id, geo_coder) }
         render locals: {
                    shapes: all_shapes,
                    show_price_filter: show_price_filter,
