@@ -8,7 +8,6 @@
 //= require jquery-ui-1.9.2.custom
 //= require jquery_ujs
 //= require jssor
-//= require public
 //= require jssor.slider
 //= require slider
 //= require jquery.form
