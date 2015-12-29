@@ -74,6 +74,16 @@ class Location < ActiveRecord::Base
 
      state
    end
+  def self.get_state(key)
+    search_key = key.split(' ')
+    search_key.each do |key_value|
+      location = self.where("lower(city) like lower(?) or lower(state) like lower(?) ", "%#{key_value}%","%#{key_value}%")
+      if location.present?
+        return location.first.state
+      end
+    end
+    return key
+  end
 
   def get_country_code
     ip = ['development', 'test'].include?(Rails.env) ? '103.242.217.18' : request.ip

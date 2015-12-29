@@ -234,7 +234,11 @@ class HomepageController < ApplicationController
     else
       if search_query.present?
         search_key = search_query.split(',')
-        state = search_key.last
+        if search_key.length > 1
+          state = search_key.last
+        else
+          state =  Location.get_state(search_query)
+        end
       end
     end
     filter_params[:search] = state

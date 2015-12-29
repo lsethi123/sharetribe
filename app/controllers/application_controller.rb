@@ -61,7 +61,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_user_location(ip)
-    if ENV['RAILS_ENV'] == 'Development'
+    if ENV['RAILS_ENV'] == 'development'
      ip = '103.15.140.69'
     end
     require 'net/http'
