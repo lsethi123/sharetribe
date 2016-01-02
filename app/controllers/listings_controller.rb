@@ -485,13 +485,13 @@ class ListingsController < ApplicationController
                      payment_type: payment_type,
                      process: process)
 
-    if allow_posting
+    # if allow_posting
       render :partial => "listings/form/form_content", locals: form_locals(shape).merge(
                run_js_immediately: true
              )
-    else
-      render :partial => "listings/payout_registration_before_posting", locals: { error_msg: error_msg }
-    end
+    # else
+    #   render :partial => "listings/payout_registration_before_posting", locals: { error_msg: error_msg }
+    # end
   end
 
   def select_unit(listing_unit, shape)
