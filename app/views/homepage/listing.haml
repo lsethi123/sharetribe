@@ -18,7 +18,7 @@
               -if (params[:view].present? || params[:q].present?)
                 Search
               -else
-                Browse and Rent a Jet Ski From Someone Like you
+                Search
     - with_big_cover_photo do
       .coverimage
         %figure.marketplace-cover-small.fluidratio
@@ -31,7 +31,7 @@
               -if (params[:view].present? || params[:q].present?)
                 Search
               -else
-                Browse and Rent a Jet Ski From Someone Like you
+                Search
 
 #map.map-search-listing
   = render :partial => "geomap_feature", :locals => { :listings => all_listing_locations(@listings)}

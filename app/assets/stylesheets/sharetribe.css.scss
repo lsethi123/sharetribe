@@ -1643,8 +1643,8 @@ body {
 
 .page-content p {
   margin-bottom: 0.75em;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
+  //-webkit-hyphens: auto;
+  //-moz-hyphens: auto;
   hyphens: auto
 }
 
@@ -8543,5 +8543,8 @@ button.sender-address-disabled, button.sender-address-disabled:hover {
 }
 
 .listing-author-name a:hover {
+  color: #3c3c3c;
+}
+.home-fluid-thumbnail-grid-author a:hover {
   color: #3c3c3c;
 }
