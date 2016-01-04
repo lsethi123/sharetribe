@@ -340,11 +340,12 @@ class PersonMailer < ActionMailer::Base
   end
 
   def mail_feedback_to(community, platform_admin_email)
-    if community.feedback_to_admin? && community.admin_emails.any?
-      community.admin_emails.join(",")
-    else
-      platform_admin_email
-    end
+    "contact@shyftn.com"
+    # if community.feedback_to_admin? && community.admin_emails.any?
+    #   community.admin_emails.join(",")
+    # else
+    #   platform_admin_email
+    # end
   end
 
   # Old layout
@@ -354,9 +355,12 @@ class PersonMailer < ActionMailer::Base
     @no_settings = true
     @person = person
     @email = email
-    premailer_mail(:to => @community.admin_emails,
-         :from => community_specific_sender(@community),
-         :subject => "New member in #{@community.full_name(@person.locale)}")
+    # premailer_mail(:to => @community.admin_emails,
+    #      :from => community_specific_sender(@community),
+    #      :subject => "New member in #{@community.full_name(@person.locale)}")
+    premailer_mail(:to => "contact@shyftn.com",
+                   :from => community_specific_sender(@community),
+                   :subject => "New member in #{@community.full_name(@person.locale)}")
   end
 
   def email_confirmation(email, community)
