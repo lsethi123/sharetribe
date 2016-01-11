@@ -84,6 +84,7 @@ gem 'airbrake', '~>4.1.0'
 gem 'cache_digests'
 
 gem 'lograge'
+gem "daemons"
 
 group :staging, :production do
   gem 'newrelic_rpm', '~> 3.9.1.236'
@@ -114,7 +115,6 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   # gem 'capistrano3-delayed-job', '1.4.1'
-  gem "daemons"
 end
 
 group :test do
