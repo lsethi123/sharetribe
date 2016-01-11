@@ -43,9 +43,9 @@ gem 'flying-sphinx', "~>1.2.0"
 # Use patched v2.0.2
 # Fixes issues: Create a new delayed delta job if there is an existing delta job which has failed
 gem 'ts-delayed-delta', "~>2.0.2",
-  :git    => 'git://github.com/pat/ts-delayed-delta.git',
-  :branch => 'master',
-  :ref    => '839284f2f28b3f4caf3a3bf5ccde9a6d222c7f4d'
+    :git => 'git://github.com/pat/ts-delayed-delta.git',
+    :branch => 'master',
+    :ref => '839284f2f28b3f4caf3a3bf5ccde9a6d222c7f4d'
 gem 'possibly', '~> 0.2.0'
 gem 'recaptcha'
 gem 'delayed_job', "~>3.0.5"
@@ -55,7 +55,7 @@ gem 'multi_json', "~>1.7.3" # 1.8.0 caused "invalid byte sequence in UTF-8" at h
 gem 'web_translate_it'
 gem 'postmark-rails' # could be removed as not currently used
 gem 'rails-i18n'
-gem 'devise', "~>2.2.4"  #3.0rc requires bit bigger changes
+gem 'devise', "~>2.2.4" #3.0rc requires bit bigger changes
 gem "devise-encryptable"
 gem "omniauth-facebook", "~> 2.0.1"
 gem 'spreadsheet'
@@ -76,9 +76,9 @@ gem "premailer"
 gem 'stringex', '~> 2.5.2'
 gem 'validates_timeliness', '~> 3.0'
 gem 'paypal-sdk-permissions',
-  :git    => 'git://github.com/paypal/permissions-sdk-ruby.git',
-  :branch => 'master',
-  :ref    => 'c0240bee9f94fe6338d67b4f754e1a11ce81619a'
+    :git => 'git://github.com/paypal/permissions-sdk-ruby.git',
+    :branch => 'master',
+    :ref => 'c0240bee9f94fe6338d67b4f754e1a11ce81619a'
 gem 'paypal-sdk-merchant', '~> 1.116.0'
 gem 'airbrake', '~>4.1.0'
 gem 'cache_digests'
@@ -90,7 +90,7 @@ group :staging, :production do
 end
 
 group :development, :test do
-  gem 'rubocop',          require: false
+  gem 'rubocop', require: false
   gem 'factory_girl_rails'
 end
 
@@ -101,8 +101,8 @@ end
 group :development do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
-  gem 'rb-fsevent',       require: false
-  gem 'guard-rspec',      require: false
+  gem 'rb-fsevent', require: false
+  gem 'guard-rspec', require: false
   gem 'annotate'
   gem 'zeus', '0.15.1'
   gem 'i18n-tasks', '~> 0.6.2'
@@ -113,6 +113,8 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
+  # gem 'capistrano3-delayed-job', '1.4.1'
+  gem "daemons"
 end
 
 group :test do
