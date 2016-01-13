@@ -196,12 +196,14 @@ class HomepageController < ApplicationController
       }
     else
       search_result.on_success { |listings|
+        if params[:q].present?
         listings.each do |listing|
           location = Location.find_by_listing_id(listing.id)
-          if params[:q].include?(location.city)
-           geo_coder[:lat] = location.latitude
-           geo_coder[:lon] = location.longitude
-          break
+            if params[:q].include?(location.city)
+              geo_coder[:lat] = location.latitude
+              geo_coder[:lon] = location.longitude
+              break
+            end
           end
         end
         @listings = listings.sort! { |a, b| ips_distance(a.id, geo_coder) <=> ips_distance(b.id, geo_coder) }
