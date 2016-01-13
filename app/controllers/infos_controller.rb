@@ -8,7 +8,7 @@ class InfosController < ApplicationController
   end
 
   def how_to_use
-    @small_cover = true
+    # @small_cover = true
     @selected_left_navi_link = "how_to_use"
     @selected_tribe_navi_tab = "about"
     case(how_to_use_content?)
