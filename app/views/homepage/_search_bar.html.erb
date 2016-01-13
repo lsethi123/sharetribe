@@ -17,7 +17,11 @@
 //
         autocomplete = new google.maps.places.Autocomplete(input, options);
         autocomplete.addListener('place_changed', get_place);
-        input.autocomplete('widget').off('mouseenter')
+        $('#autocomplete').on ('keyup')
+            $('.pac-container').on('touchend')
+            e.stopImmediatePropagation()
+
+
     }
 
     function get_place() {
