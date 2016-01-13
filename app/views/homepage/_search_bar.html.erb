@@ -14,11 +14,10 @@
         var options = {
             types: ['(regions)']
         };
+//
         autocomplete = new google.maps.places.Autocomplete(input, options);
-        if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-            $('.ui-autocomplete').off('menufocus hover mouseover');
-        }
         autocomplete.addListener('place_changed', get_place);
+        input.autocomplete('widget').off('mouseenter')
     }
 
     function get_place() {
