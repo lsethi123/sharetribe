@@ -60,23 +60,32 @@ class ApplicationController < ActionController::Base
     12742 * Math.asin(Math.sqrt(distance))
   end
 
-  def get_user_location(ip)
-    if ENV['RAILS_ENV'] == 'development'
-     ip = '103.15.140.69'
-    end
-    require 'net/http'
+  def get_user_location(q)
     location = {lat: 0, lon: 0}
-    url = URI.parse("http://freegeoip.net/json/#{ip}")
-    req = Net::HTTP::Get.new(url.to_s)
-    res = Net::HTTP.start(url.host, url.port) {|http|
-      http.request(req)
-    }
-    response = res.body
-    if response.present?
-      response = JSON.parse(response)
-      location[:lat] = response['latitude'].to_i
-      location[:lon] = response['longitude'].to_i
+    geocoder = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=#{params[:q]}"
+    url = URI.escape(geocoder)
+    resp = RestClient.get(url)
+    result = JSON.parse(resp.body)
+    if result["status"] == "OK"
+      location[:lat]  = result["results"][0]["geometry"]["location"]["lat"]
+      location[:lon] = result["results"][0]["geometry"]["location"]["lng"]
     end
+    # if ENV['RAILS_ENV'] == 'development'
+    #  ip = '103.15.140.69'
+    # end
+    # require 'net/http'
+    # location = {lat: 0, lon: 0}
+    # url = URI.parse("http://freegeoip.net/json/#{ip}")
+    # req = Net::HTTP::Get.new(url.to_s)
+    # res = Net::HTTP.start(url.host, url.port) {|http|
+    #   http.request(req)
+    # }
+    # response = res.body
+    # if response.present?
+    #   response = JSON.parse(response)
+    #   location[:lat] = response['latitude'].to_i
+    #   location[:lon] = response['longitude'].to_i
+    # end
     location
   end
 

@@ -17,6 +17,7 @@ class ListingsController < ApplicationController
 
   before_filter :save_current_path, :only => :show
   before_filter :ensure_authorized_to_view, :only => [ :show, :follow, :unfollow ]
+  before_filter
 
   before_filter :only => [ :close ] do |controller|
     controller.ensure_current_user_is_listing_author t("layouts.notifications.only_listing_author_can_close_a_listing")
@@ -265,14 +266,18 @@ class ListingsController < ApplicationController
           "layouts.notifications.listing_created_successfully",
           :new_listing_link => view_context.link_to(t("layouts.notifications.create_new_listing"),new_listing_path)
         ).html_safe
-        redirect_to @listing, status: 303 and return
+        if @current_user.braintree_account
+          redirect_to @listing, status: 303 and return
+        else
+          redirect_to new_braintree_settings_payment_path(@current_user) and return
+        end
       else
         Rails.logger.error "Errors in creating listing: #{@listing.errors.full_messages.inspect}"
         flash[:error] = t(
           "layouts.notifications.listing_could_not_be_saved",
           :contact_admin_link => view_context.link_to(t("layouts.notifications.contact_admin_link_text"), new_user_feedback_path, :class => "flash-error-link")
         ).html_safe
-        redirect_to new_listing_path and return
+         redirect_to new_listing_path and return
       end
     end
   end

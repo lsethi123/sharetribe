@@ -180,12 +180,19 @@ class HomepageController < ApplicationController
     shape_name_map = all_shapes.map { |s| [s[:id], s[:name]] }.to_h
 
     user_ip = request.remote_ip
-    geo_coder = get_user_location(user_ip)
+    if params[:q].present?
+      geo_coder = get_user_location(params[:q])
+    end
+    # geo_coder = get_user_location(user_ip)
 
     if request.xhr? # checks if AJAX request
       search_result.on_success { |listings|
-        @listings = listings.sort! { |a, b| a.title.downcase <=> b.title.downcase } # TODO Remove
-
+        if params[:q].present?
+          @listings = listings.sort! { |a, b| a.title.downcase <=> b.title.downcase } # TODO Remove
+        else
+          @listings = listings
+        end
+       # @listings = @listings.reject!{ |k| !BraintreeAccount.find_by_person_id(k.author.id).present? }
         if @view_type == "grid" then
           render :partial => "grid_item", :collection => @listings, :as => :listing
         else
@@ -197,16 +204,12 @@ class HomepageController < ApplicationController
     else
       search_result.on_success { |listings|
         if params[:q].present?
-        listings.each do |listing|
-          location = Location.find_by_listing_id(listing.id)
-            if params[:q].include?(location.city)
-              geo_coder[:lat] = location.latitude
-              geo_coder[:lon] = location.longitude
-              break
-            end
-          end
+          @listings = listings.sort! { |a, b| ips_distance(a.id, geo_coder) <=> ips_distance(b.id, geo_coder) }
+        else
+          @listings = listings
         end
-        @listings = listings.sort! { |a, b| ips_distance(a.id, geo_coder) <=> ips_distance(b.id, geo_coder) }
+
+        #@listings = @listings.reject!{ |k| !BraintreeAccount.find_by_person_id(k.author.id).present? }
         render locals: {
                    shapes: all_shapes,
                    show_price_filter: show_price_filter,
