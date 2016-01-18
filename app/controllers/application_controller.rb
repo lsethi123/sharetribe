@@ -62,7 +62,7 @@ class ApplicationController < ActionController::Base
 
   def get_user_location(q)
     location = {lat: 0, lon: 0}
-    geocoder = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=#{params[:q]}"
+    geocoder = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=#{q}"
     url = URI.escape(geocoder)
     resp = RestClient.get(url)
     result = JSON.parse(resp.body)
