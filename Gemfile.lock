@@ -327,6 +327,7 @@ GEM
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
     fssm (0.2.10)
+    geokit (1.10.0)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     git-version-bump (0.15.1)
@@ -700,6 +701,7 @@ DEPENDENCIES
   factory_girl_rails
   fb-channel-file
   flying-sphinx (~> 1.2.0)
+  geokit
   guard-livereload
   guard-rspec
   haml
@@ -762,6 +764,3 @@ DEPENDENCIES
   will_paginate
   xpath
   zeus (= 0.15.1)
-
-BUNDLED WITH
-   1.10.6

@@ -55,35 +55,35 @@ class Location < ActiveRecord::Base
     okresponse
   end
 
-   def self.get_city(zip)
-     location = Location.find_by_zip(zip)
-     return location.state if location.present?
-     state =''
-     geocoder = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=#{zip}&region=us"
-     if(geocoder.present?)
-       url = URI.escape(geocoder)
-       resp = RestClient.get(url)
-       result = JSON.parse(resp.body)
-       address_components = result["results"][0]["address_components"]
-       address_components.each do |adddress|
-         if adddress["types"][0] == 'administrative_area_level_1'
-           state = adddress["long_name"]
-         end
-       end
-     end
-
-     state
-   end
-  def self.get_state(key)
-    search_key = key.split(' ')
-    search_key.each do |key_value|
-      location = self.where("lower(city) like lower(?) or lower(state) like lower(?) ", "%#{key_value}%","%#{key_value}%")
-      if location.present?
-        return location.first.state
-      end
-    end
-    return key
-  end
+   # def self.get_city(zip)
+   #   location = Location.find_by_zip(zip)
+   #   return location.state if location.present?
+   #   state =''
+   #   geocoder = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=#{zip}&region=us"
+   #   if(geocoder.present?)
+   #     url = URI.escape(geocoder)
+   #     resp = RestClient.get(url)
+   #     result = JSON.parse(resp.body)
+   #     address_components = result["results"][0]["address_components"]
+   #     address_components.each do |adddress|
+   #       if adddress["types"][0] == 'administrative_area_level_1'
+   #         state = adddress["long_name"]
+   #       end
+   #     end
+   #   end
+   #
+   #   state
+   # end
+  # def self.get_state(key)
+  #   search_key = key.split(' ')
+  #   search_key.each do |key_value|
+  #     location = self.where("lower(city) like lower(?) or lower(state) like lower(?) ", "%#{key_value}%","%#{key_value}%")
+  #     if location.present?
+  #       return location.first.state
+  #     end
+  #   end
+  #   return key
+  # end
 
   def get_country_code
     ip = ['development', 'test'].include?(Rails.env) ? '103.242.217.18' : request.ip

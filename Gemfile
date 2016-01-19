@@ -17,6 +17,7 @@ end
 
 gem 'sass-rails'
 gem 'compass-rails'
+gem 'geokit'
 
 gem 'jquery-rails', '2.1.4'
 

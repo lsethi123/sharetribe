@@ -163,6 +163,10 @@ class HomepageController < ApplicationController
 
     per_page = @view_type == "map" ? APP_CONFIG.map_listings_limit : APP_CONFIG.grid_listings_limit
 
+    if params[:q].present?
+      geo_location = get_search_location(params[:q])
+    end
+
     includes =
         case @view_type
           when "grid"
@@ -178,12 +182,6 @@ class HomepageController < ApplicationController
     search_result = find_listings(params, per_page, compact_filter_params, includes.to_set)
 
     shape_name_map = all_shapes.map { |s| [s[:id], s[:name]] }.to_h
-
-    user_ip = request.remote_ip
-    if params[:q].present?
-      geo_coder = get_user_location(params[:q])
-    end
-    # geo_coder = get_user_location(user_ip)
 
     if request.xhr? # checks if AJAX request
       search_result.on_success { |listings|
@@ -204,7 +202,7 @@ class HomepageController < ApplicationController
     else
       search_result.on_success { |listings|
         if params[:q].present?
-          @listings = listings.sort! { |a, b| ips_distance(a.id, geo_coder) <=> ips_distance(b.id, geo_coder) }
+          @listings = listings.sort! { |a, b| ips_distance(a.id, geo_location) <=> ips_distance(b.id, geo_location) }
         else
           @listings = listings
         end
@@ -238,23 +236,10 @@ class HomepageController < ApplicationController
       filter_params[:categories] = category.own_and_subcategory_ids
       @selected_category = category
     end
-    search_query = params[:query].present? ? params[:query] : params[:q]
-    #params.delete('query')
-
-    zip = Integer(search_query) rescue nil
-    if zip
-      state = Location.get_city(zip)
-    else
-      if search_query.present?
-        search_key = search_query.split(',')
-        if search_key.length > 1
-          state = search_key.last
-        else
-          state =  Location.get_state(search_query)
-        end
-      end
-    end
-    filter_params[:search] = state
+    search_query = params[:q] #params[:query].present? ? params[:query] : params[:q]
+    geo_location = get_search_location(search_query)
+    puts "Query: #{search_query} Geo Location: #{geo_location.inspect}"
+    filter_params[:search] = geo_location[:state]
     filter_params[:custom_dropdown_field_options] = HomepageController.dropdown_field_options_for_search(params)
     filter_params[:custom_checkbox_field_options] = HomepageController.checkbox_field_options_for_search(params)
 
