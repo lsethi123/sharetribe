@@ -51,22 +51,25 @@
       <div class="col-12">
         <div class="col-4">
           <div class="box-item">
-            <%= image_tag('slider/meet_new_people.jpg') %>
-            <div class="box-item-text">
-              <h3> Meet New People </h3>
-              Our friendly hosts welcome you into their homes and allow you to take their rides for a spin.
-            </div>
+            <%= link_to home_listing_path do %>
+                <%= image_tag('slider/meet_new_people.jpg') %>
+                <div class="box-item-text">
+                  <h3> Meet New People </h3>
+                  Our friendly hosts welcome you into their homes and allow you to take their rides for a spin.
+                </div>
+            <% end %>
           </div>
         </div>
         <div class="col-4">
           <div class="box-item">
-            <%= image_tag('slider/shytn_ride.jpg') %>
-            <div class="box-item-text">
-              <h3> Ride Solo or With Friend </h3>
-
-              Ride alone or share the experience with friends and family. We have many suitable options to accomodate
-              one or multiple riders.
-            </div>
+            <%= link_to home_listing_path do %>
+                <%= image_tag('slider/shytn_ride.jpg') %>
+                <div class="box-item-text">
+                  <h3> Ride Solo or With Friend </h3>
+                  Ride alone or share the experience with friends and family. We have many suitable options to
+                  accomodate one or multiple riders.
+                </div>
+            <% end %>
           </div>
         </div>
         <div class="col-4">
