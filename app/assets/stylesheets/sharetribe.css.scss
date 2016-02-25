@@ -7170,7 +7170,7 @@ h2 {
 .listing-image-frame {
   width: 100%;
   padding-bottom: 66.66667%;
-  background-color: #3c3c3c;
+  background-color: white;
   position: absolute;
   top: 0px;
   left: 0px
@@ -7223,7 +7223,7 @@ h2 {
 .listing-image, .listing-image.too-wide {
   display: block;
   margin: auto;
-  width: 100%;
+  width: auto;
   height: auto
 }
 
