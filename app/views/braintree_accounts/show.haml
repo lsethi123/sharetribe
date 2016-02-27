@@ -56,11 +56,6 @@
       = @braintree_account.address_street_address
 
     %dt.braintree-account-key
-      = t(".address_postal_code")
-    %dd.braintree-account-value
-      = @braintree_account.address_postal_code
-
-    %dt.braintree-account-key
       = t(".address_locality")
     %dd.braintree-account-value
       = @braintree_account.address_locality
@@ -69,6 +64,11 @@
       = t(".address_region")
     %dd.braintree-account-value
       = @state_name
+
+    %dt.braintree-account-key
+      = t(".address_postal_code")
+    %dd.braintree-account-value
+      = @braintree_account.address_postal_code
 
     %dt.braintree-account-key
       = t(".date_of_birth")
