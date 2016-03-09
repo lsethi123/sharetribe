@@ -25,7 +25,12 @@ class BraintreeSaleService
     end
 
     log_result(result)
-
+    processor_response_code = result.transaction.processor_response_code
+    if ( processor_response_code == '2038' or !result.success?)
+      transaction = Transaction.find_by_id(@payment.transaction_id)
+      transaction.current_state = 'errored'
+      transaction.save
+    end
     result
   end
 

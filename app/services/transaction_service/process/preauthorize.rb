@@ -13,8 +13,11 @@ module TransactionService::Process
           tx: tx,
           gateway_fields: gateway_fields,
           prefer_async: prefer_async)) do
-
+        transaction = Transaction.find_by_id(tx[:id])
+        unless transaction.current_state == 'errored'
         Transition.transition_to(tx[:id], :preauthorized)
+        end
+
       end
     end
 

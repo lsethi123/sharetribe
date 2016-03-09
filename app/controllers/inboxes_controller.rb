@@ -67,7 +67,7 @@ class InboxesController < ApplicationController
         payment_sum
       )
 
-      action_messages.last[:content]
+      action_messages.last[:content] if action_messages.present?
     end
   end
 
