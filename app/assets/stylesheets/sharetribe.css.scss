@@ -7055,7 +7055,8 @@ h2 {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-bottom: 66.66667%
+  padding-bottom: 66.66667%;
+  min-height: 350px;
 }
 
 .listing-image-carousel:hover > .listing-image-navi {
@@ -7173,7 +7174,8 @@ h2 {
   background-color: white;
   position: absolute;
   top: 0px;
-  left: 0px
+  left: 0px;
+  min-height: 350px;
 }
 
 .listing-image-frame-content {
