@@ -207,7 +207,7 @@ class HomepageController < ApplicationController
           @listings = listings
         end
 
-        @listings = @listings.reject{ |k| !(Listing.find_by_id(k.id).open)}
+        # @listings = @listings.reject{ |k| !(Listing.find_by_id(k.id).open)}
         # @listings.each do |k|
         #   puts ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
         #   puts(Listing.find_by_id(k.id).open)
