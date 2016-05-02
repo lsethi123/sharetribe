@@ -207,6 +207,12 @@ class HomepageController < ApplicationController
           @listings = listings
         end
 
+        @listings = @listings.reject{ |k| !(Listing.find_by_id(k.id).open)}
+        # @listings.each do |k|
+        #   puts ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+        #   puts(Listing.find_by_id(k.id).open)
+        #   puts ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+        # end
         #@listings = @listings.reject!{ |k| !BraintreeAccount.find_by_person_id(k.author.id).present? }
         render locals: {
                    shapes: all_shapes,
@@ -238,7 +244,6 @@ class HomepageController < ApplicationController
     end
     search_query = params[:q] #params[:query].present? ? params[:query] : params[:q]
     geo_location = get_search_location(search_query)
-    puts "Query: #{search_query} Geo Location: #{geo_location.inspect}"
     filter_params[:search] = geo_location[:state]
     filter_params[:custom_dropdown_field_options] = HomepageController.dropdown_field_options_for_search(params)
     filter_params[:custom_checkbox_field_options] = HomepageController.checkbox_field_options_for_search(params)

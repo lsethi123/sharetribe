@@ -1,4 +1,6 @@
 require 'csv'
+require 'rake'
+Kassi::Application.load_tasks
 
 class Admin::CommunityMembershipsController < ApplicationController
   before_filter :ensure_is_admin
@@ -43,7 +45,7 @@ class Admin::CommunityMembershipsController < ApplicationController
     membership.update_attributes(:admin => 0) if membership.admin == 1
 
     @current_community.close_listings_by_author(membership.person)
-
+    Rake::Task["ts:index"].invoke
     redirect_to admin_community_community_memberships_path(@current_community)
   end
 
