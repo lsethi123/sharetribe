@@ -14,9 +14,8 @@
   - content_for(:page_content) do
     = yield :title_header
     %article.page-content
-      .wrapper
-        = render :partial => "layouts/notifications"
-        = yield
+      = render :partial => "layouts/notifications"
+      = yield
 
   -#
     This is not pretty, but works.

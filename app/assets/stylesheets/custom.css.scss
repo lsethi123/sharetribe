@@ -148,7 +148,7 @@ header {
     margin-top: 25px;
   }
 
-  .second_image{
+  .second_image {
     margin-top: 35px;
   }
 
@@ -274,7 +274,7 @@ header {
   color: #057107 !important;
 }
 
-.join-now-link:hover{
+.join-now-link:hover {
   color: #057107 !important;
 }
 
@@ -320,7 +320,7 @@ header {
 }
 
 .js-form-fields a {
-  color:  #08ba0b;
+  color: #08ba0b;
 }
 
 .item-title {
@@ -344,6 +344,43 @@ header {
   float: right;
 }
 
-  .pac-item{
-    cursor: pointer;
+.pac-item {
+  cursor: pointer;
 }
+
+.home_page_image {
+  img {
+    width: 100%;
+  }
+}
+
+.header_link {
+  color: #2EE12E !important;
+}
+
+.home_page_text {
+  line-height: 1.2;
+}
+
+.home-header-text-sm {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 15px 0 55px !important;
+  text-align: center;
+}
+
+.home_page_second_image {
+  text-align: center;
+  position: relative;
+}
+
+.home_page_second_image_text {
+  color: white;
+  font-size: 30px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 60px;
+}
+

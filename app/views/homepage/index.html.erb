@@ -6,82 +6,117 @@
     <%= render :partial => 'homepage/slider' %>
 <% end %>
 
-<div class="home-page-wrapper">
-  <div class="home-header-text col-12">
-    Connecting you to your next off road adventure!
+<div class="wrapper">
+  <div class="home-page-wrapper">
+    <div class="home-header-text col-12 home_page_text">
+      Rent out your toys today and </br> earn extra cash
+    </div>
+
+    <div class="home-header-text col-12">
+      <%= link_to 'What is Shyftn?', 'https://www.shyftn.com/en/infos/about', class: 'header_link' %>
+    </div>
+
+    <div class="home-header-text col-12 header_link">
+      <%= link_to 'How it works', 'https://www.shyftn.com/en/infos/how_to_use', class: 'header_link' %>
+    </div>
+
+    <div class="home-header-text-sm col-12 home_page_text">
+      On average, Jet Ski owners ride their Jet Skis less than 40 hours per year. That's a lot of down time! Rent it out
+      to members of your community and start earning extra money today
+    </div>
+
   </div>
-  <div class="shyftn-quoate">
-    <div class="row">
-      <div class="col-12">
-        <div class="col-3 quoate-item">
-          <h1> Simple </h1>
+</div>
+<div class="home_page_image">
+  <%= image_tag 'home_page_first_image.jpg', style: 'margin-bottom: 30px;' %>
+</div>
+<div class="wrapper">
+  <div class="home-page-wrapper">
+    <div class="clear"></div>
+    <div class="shyftn-quoate">
+      <div class="row">
+        <div class="col-12">
+          <div class="col-3 quoate-item">
+            <h1> Simple </h1>
 
-          <div class="quoate-text">
-            Just do a quick search and see all the rides you can choose from. You can book your adventure in a matter of
-            minutes!
+            <div class="quoate-text">
+              Just do a quick search and see all the rides you can choose from. You can book your adventure in a matter
+              of
+              minutes!
+            </div>
           </div>
-        </div>
-        <div class="col-3 quoate-item">
-          <h1> Low Rates </h1>
+          <div class="col-3 quoate-item">
+            <h1> Low Rates </h1>
 
-          <div class="quoate-text">
-            Rent rides for less and never worry about carrying cash. Secure payments are processed through the site.
+            <div class="quoate-text">
+              Rent rides for less and never worry about carrying cash. Secure payments are processed through the site.
+            </div>
           </div>
-        </div>
-        <div class="col-3 quoate-item">
-          <h1> No Hidden Fees</h1>
+          <div class="col-3 quoate-item">
+            <h1> No Hidden Fees</h1>
 
-          <div class="quoate-text">
-            We have clear pricing and do not charge any hidden fees.
+            <div class="quoate-text">
+              We have clear pricing and do not charge any hidden fees.
+            </div>
           </div>
-        </div>
-        <div class="col-3 quoate-item">
-          <h1> Reviews </h1>
+          <div class="col-3 quoate-item">
+            <h1> Reviews </h1>
 
-          <div class="quoate-text">
-            Written by hosts and riders like you about their experiences. Reviews help you to select the correct ride
-            with confidence.
+            <div class="quoate-text">
+              Written by hosts and riders like you about their experiences. Reviews help you to select the correct ride
+              with confidence.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="home-box-content">
-    <div class="row">
-      <div class="col-12">
-        <div class="col-4">
-          <div class="box-item">
-            <%= link_to home_listing_path do %>
-                <%= image_tag('slider/meet_new_people.jpg') %>
-                <div class="box-item-text">
-                  <h3> Meet New People </h3>
-                  Our friendly hosts welcome you into their homes and allow you to take their rides for a spin.
-                </div>
-            <% end %>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="box-item">
-            <%= link_to home_listing_path do %>
-                <%= image_tag('slider/shytn_ride.jpg') %>
-                <div class="box-item-text">
-                  <h3> Ride Solo or With Friend </h3>
-                  Ride alone or share the experience with friends and family. We have many suitable options to
-                  accomodate one or multiple riders.
-                </div>
-            <% end %>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="box-item">
-            <%= link_to home_community_path do %>
-                <%= image_tag('slider/shyftn_community.jpg') %>
-                <div class="box-item-text">
-                  <h3> The Shyftn Experience </h3>
+</div>
 
-                  See what is being said about the Shyftn community.
-                </div>
-            <% end %>
+<div class="home_page_second_image home_page_image">
+  <%= image_tag 'home_page_second_image.jpg', style: 'margin-top: 30px;' %>
+  <div class="home_page_second_image_text">We cover you up to $250,000 so you can list your ride worry free</div>
+</div>
+
+<div class="wrapper">
+  <div class="home-page-wrapper">
+    <div class="home-box-content">
+      <div class="row">
+        <div class="col-12">
+          <div class="col-4">
+            <div class="box-item">
+              <%= link_to home_listing_path do %>
+                  <%= image_tag('slider/meet_new_people.jpg') %>
+                  <div class="box-item-text">
+                    <h3> Meet New People </h3>
+                    Our friendly hosts welcome you into their homes and allow you to take their rides for a spin.
+                  </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="box-item">
+              <%= link_to home_listing_path do %>
+                  <%= image_tag('slider/shytn_ride.jpg') %>
+                  <div class="box-item-text">
+                    <h3> Ride Solo or With Friend </h3>
+                    Ride alone or share the experience with friends and family. We have many suitable options to
+                    accomodate one or multiple riders.
+                  </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="box-item">
+              <%= link_to home_community_path do %>
+                  <%= image_tag('slider/shyftn_community.jpg') %>
+                  <div class="box-item-text">
+                    <h3> The Shyftn Experience </h3>
+
+                    See what is being said about the Shyftn community.
+                  </div>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
