@@ -1,25 +1,63 @@
-@media only screen and (max-width : 850px) {
+@media only screen and (max-width: 850px) {
   .home-header-text {
     font-size: 28px;
   }
+  .home-box-content {
+    .box-item {
+      img {
+        min-height: 300px;
+      }
+    }
+  }
 }
 
-@media only screen and (max-width : 700px) {
+@media only screen and (max-width: 700px) {
   .home-page-cover-photo {
     background-position: center center !important;
     height: 22.8125em !important;
   }
 }
 
-@media only screen and (max-width : 650px) {
+@media only screen and (max-width: 650px) {
   .home-header-text {
     font-size: 23px;
   }
-
+  .marketplace-lander {
+    .marketplace-lander-content {
+      top: -17em !important;
+    }
+  }
+  .home-header-text-sm, .home_page_second_image_text {
+    font-size: 24px;
+  }
 }
 
-@media only screen and (max-width : 530px) {
+@media only screen and (max-width: 530px) {
   .home-header-text {
     font-size: 20px;
+  }
+  .marketplace-lander {
+    .marketplace-lander-content {
+      top: -17em !important;
+    }
+  }
+  .home-header-text-sm, .home_page_second_image_text {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .marketplace-lander {
+    .marketplace-lander-content {
+      top: -19em !important;
+    }
+  }
+  .home-header-text-sm, .home_page_second_image_text {
+    font-size: 20px;
+  }
+  .home_page_image {
+    img {
+      height: 300px;
+    }
   }
 }
