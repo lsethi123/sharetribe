@@ -2,13 +2,6 @@
   .home-header-text {
     font-size: 28px;
   }
-  .home-box-content {
-    .box-item {
-      img {
-        min-height: 300px;
-      }
-    }
-  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -29,6 +22,13 @@
   }
   .home-header-text-sm, .home_page_second_image_text {
     font-size: 24px;
+    line-height: 25px;
+  }
+
+  .marketplace-lander-content {
+    h2.slider-lander-content-title {
+      font-size: 36px;
+    }
   }
 }
 
@@ -43,21 +43,22 @@
   }
   .home-header-text-sm, .home_page_second_image_text {
     font-size: 22px;
+    line-height: 28px;
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 490px) {
   .marketplace-lander {
     .marketplace-lander-content {
-      top: -19em !important;
+      top: -18em !important;
     }
   }
   .home-header-text-sm, .home_page_second_image_text {
-    font-size: 20px;
+    font-size: 19px;
   }
   .home_page_image {
     img {
-      height: 300px;
+      height: 350px;
     }
   }
 }

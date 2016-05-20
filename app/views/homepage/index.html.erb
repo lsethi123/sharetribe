@@ -6,31 +6,29 @@
     <%= render :partial => 'homepage/slider' %>
 <% end %>
 
-<div class="wrapper">
+<div class="wrapper clearfix">
   <div class="home-page-wrapper">
-    <div class="home-header-text col-12 home_page_text">
+    <div class="home-header-text home_page_text">
       Rent out your toys today and </br> earn extra cash
     </div>
 
-    <div class="home-header-text col-12">
+    <div class="home-header-text" style="margin: 10px 0 25px">
       <%= link_to 'What is Shyftn?', 'https://www.shyftn.com/en/infos/about', class: 'header_link' %>
     </div>
 
-    <div class="home-header-text col-12 header_link">
+    <div class="home-header-text" style="margin: 0 0 25px 0">
       <%= link_to 'How it works', 'https://www.shyftn.com/en/infos/how_to_use', class: 'header_link' %>
     </div>
-
-    <div class="home-header-text-sm col-12 home_page_text">
-      On average, Jet Ski owners ride their Jet Skis less than 40 hours per year. That's a lot of down time! Rent it out
-      to members of your community and start earning extra money today!
-    </div>
-
   </div>
 </div>
 <div class="home_page_image">
+  <div class="home_page_second_image_text jet-ski-image-text">
+    On average, Jet Ski owners ride their Jet Skis less than 40 hours per year. That's a lot of down time! Rent it out
+    to members of your community and start earning extra money today!
+  </div>
   <%= image_tag 'home_page_first_image.jpg', style: 'margin-bottom: 30px;' %>
 </div>
-<div class="wrapper">
+<div class="wrapper quates-wrapper">
   <div class="home-page-wrapper">
     <div class="clear"></div>
     <div class="shyftn-quoate">
@@ -75,10 +73,10 @@
 
 <div class="home_page_second_image home_page_image">
   <%= image_tag 'home_page_second_image.jpg', style: 'margin-top: 30px;' %>
-  <div class="home_page_second_image_text">Our Shyftn Promise covers your vehicle up to $250,000!</div>
+  <div class="home_page_second_image_text avt-ski-image-text">Our Shyftn Promise covers your vehicle up to $250,000!.</div>
 </div>
 
-<div class="wrapperxx">
+<div class="wrapper">
   <div class="home-page-wrapper">
     <div class="home-box-content">
       <div class="row">
