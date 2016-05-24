@@ -96,7 +96,7 @@ header {
 
 .marketplace-lander-content {
   h2.slider-lander-content-title {
-    font-size: 2.8em;
+    font-size: 3em;
   }
 }
 
@@ -198,7 +198,7 @@ header {
 }
 
 .shyftn-quoate {
-  margin: 10px 0;
+  margin: 10px 0 40px 0;
   .quoate-item {
     h1 {
       font-size: 22px;
@@ -395,10 +395,15 @@ header {
 
 .avt-ski-image-text {
   background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+  font-size: 45px;
 }
 
 .page-content {
   .quates-wrapper {
     max-width: 68em;
   }
+}
+
+.wrapper.community-wrapper {
+  max-width: 68em;
 }
