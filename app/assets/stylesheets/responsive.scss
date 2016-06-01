@@ -2,6 +2,10 @@
   .home-header-text {
     font-size: 28px;
   }
+  .home_page_second_image_text {
+    font-size: 26px;
+    line-height: 25px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -21,13 +25,21 @@
     }
   }
   .home-header-text-sm, .home_page_second_image_text {
-    font-size: 24px;
-    line-height: 25px;
+    font-size: 30px;
+    line-height: 30px;
   }
 
   .marketplace-lander-content {
     h2.slider-lander-content-title {
       font-size: 36px;
+    }
+  }
+  .home_page_image {
+    .desktop-view {
+      display: none;
+    }
+    .mobile-view {
+      display: block;
     }
   }
 }
@@ -44,6 +56,7 @@
   .home-header-text-sm, .home_page_second_image_text {
     font-size: 22px;
     line-height: 28px;
+    font-weight: bold;
   }
 }
 
@@ -56,11 +69,7 @@
   .home-header-text-sm, .home_page_second_image_text {
     font-size: 19px;
   }
-  .home_page_image {
-    img {
-      height: 300px;
-    }
-  }
+
   .avt-ski-image-text {
     background: rgba(100, 100, 100, 0.5);
   }

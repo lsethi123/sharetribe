@@ -96,7 +96,7 @@ header {
 
 .marketplace-lander-content {
   h2.slider-lander-content-title {
-    font-size: 3em;
+    font-size: 3.5em;
   }
 }
 
@@ -408,5 +408,9 @@ header {
 }
 
 .wrapper.community-wrapper {
-  max-width: 68em;
+  max-width: 97%;
+}
+
+.mobile-view {
+  display: none;
 }
